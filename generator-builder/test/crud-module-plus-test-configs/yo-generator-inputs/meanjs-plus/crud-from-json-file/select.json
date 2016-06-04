@@ -1,0 +1,33 @@
+{
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Select from the below options",
+			"tagName": "select",
+			"selectTagOptions": [
+				{
+					"text": "option 1",
+					"attributes": {
+						"value": "option 1"
+					}
+				},
+				{
+					"text": "option 2",
+					"attributes": {
+						"value": "option 2"
+					}
+				},
+				{
+					"text": "option 3",
+					"attributes": {
+						"value": "option 3"
+					}
+				}
+			]
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Some other field"
+		}
+	]
+}

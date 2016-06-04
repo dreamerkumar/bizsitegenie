@@ -1,0 +1,38 @@
+<div class="wrap-dashboard" data-ng-init="findOne()">
+    <div class="dashboard">
+        <div class="dashboard-header">
+			<a class="btn btn-primary btn-sm pull-left" href="/#!{{parentRouteUrl}}/dashboard">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == dashboard.user._id))">
+	            <a class="btn btn-primary btn-sm" ng-click="addWidget()"><i class="glyphicon glyphicon-plus"></i> Add Widget</a>
+	            <a class="btn btn-warning btn-sm" ng-click="clear()"><i class="glyphicon glyphicon-trash"></i> Clear</a>
+	    		<a class="btn btn-danger btn-sm btn-trash" data-ng-click="removeDashboard();"><i class="glyphicon glyphicon-trash"></i></a>
+            </div>
+            <h2 class="dashboard-name">
+            	<span data-ng-bind="dashboard.name"></span>
+    			<a class="" href="/#!{{parentRouteUrl}}/dashboard/{{dashboard._id}}/edit" 
+    				data-ng-show="((authentication.user) && (authentication.user._id == dashboard.user._id))">
+					<i class="glyphicon glyphicon-edit"></i>
+				</a>
+            </h2>
+        </div>
+        <div gridster="gridsterOptions">
+            <ul>
+                <li gridster-item="widget" ng-repeat="widget in content.widgets">
+                	<dashboard-widget widget="widget" dashboard-id="{{dashboard.user._id}}" on-remove="removeWidget" on-update="update"></dashboard-widget>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--  commented the footer as it keeps dancing as user clicks on a widget   <section class="dashboard-footer">
+		<small>
+			<em class="text-muted">
+				Created
+				<span data-ng-bind="dashboard.created | date:'mediumDate'"></span>
+				by
+				<span data-ng-bind="dashboard.user.displayName"></span>
+			</em>
+		</small>
+	</section> -->
+</div>

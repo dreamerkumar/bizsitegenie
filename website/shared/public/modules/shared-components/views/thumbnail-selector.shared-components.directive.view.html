@@ -1,0 +1,11 @@
+<!-- http://codepen.io/rrenula/pen/pIjBt -->
+<div class="thumbnail-selector">
+	<div class="gallery">
+		<ul>
+			<li ng-repeat="thumbnail in availableThumbnails" ng-class="{selected: selectedThumbnail.id === thumbnail.id}">
+				<img ng-src="{{thumbnail.imageUrl}}" ng-click="selectThumbnail(thumbnail)">
+			</li>
+		</ul>
+	</div>
+	<div class="clear-floats"></div>
+</div>

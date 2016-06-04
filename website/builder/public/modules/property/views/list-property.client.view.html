@@ -1,0 +1,77 @@
+<section class="items item-properties text-center" data-ng-controller="ListPropertyController" data-ng-init="find()"  data-ng-show="((authentication.user) && (authentication.user._id == item.user._id))">
+    <item-header item-page-type="Properties"></item-header>
+    <builder-add-properties-box on-add="find()"></builder-add-properties-box>
+    <div>
+        <fieldset  data-ng-show="property.$resolved && property.length && property.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <div data-as-sortable="dragControlListeners" data-ng-model="property">
+            <div data-ng-repeat="property in property | filter:{name: filterText}" data-ng-href="#!{{parentRouteUrl}}/property/{{property._id}}" class="property-item-in-list text-left" data-as-sortable-item>
+                <div data-as-sortable-item-handle class="sortable-item">
+                    <div class="hamburger">
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </div>                    
+                    <div class="property-name-and-type">
+                        <div class="property-name">
+                            <span data-ng-bind="property.name" title="{{property.name}}"></span>
+                        </div>
+                        <div class="">
+            			    <div class="property-type-container">
+                                <div>
+                                    <select ng-model="property.type" ng-change="updateProperty(property)">
+                                        <option value="textbox">Text</option>            
+                                        <option value="textarea">Paragraph</option>
+                                        <option value="select">Dropdown</option>                     
+                                        <option value="radio">Radio Buttons</option>
+                                        <option value="checkbox">Yes or No Flag</option>
+                                        <option value="number">Number</option>
+                                        <option value="integer">Integer</option>
+                                        <option value="datetime">Date and Time</option>
+                                        <option value="image">Image</option>
+                                        <option value="file">File</option>
+                                        <option value="foreignkeyref">Reference Another Item</option>            
+                                        <option value="lookupfromprop">Property values of another Item</option>            
+                                    </select>
+                                </div>
+                            </div>
+            			</div>
+                    </div>
+                    <div class="checkbox required-property">
+                        <label><input type="checkbox" ng-model="property.required" ng-change="updateProperty(property)">Required</label>
+                    </div>
+                    <div class="set-reference" ng-show="property.type == 'foreignkeyref'" ng-click="setForeignKeyRef(property)" title="{{property.referencedFeatureName || 'Click to select'}}">
+                        <span class="glyphicon glyphicon-link"></span>
+                        <small>(
+                            <span>{{property.referencedFeatureName}}</span>
+                            <span class="text-danger" ng-show="!property.referencedFeatureName">None selected</span>
+                            )
+                        </small>
+                    </div>
+                    <div class="set-reference" ng-show="property.type == 'lookupfromprop'" ng-click="setForeignKeyRef(property)" title="{{property.refDescription || 'Click to select'}}">
+                        <span class="glyphicon glyphicon-link"></span>
+                        <small>
+                            <span>{{property.refDescription}}</span>
+                            <span class="text-danger" ng-show="!property.refDescription">None selected</span>                            
+                        </small>
+                    </div>
+                    <div class="set-options" ng-show="property.type == 'select' || property.type == 'radio'" ng-click="getradioorselectoptions(property)" title="{{property.option || 'Click to add'}}">
+                        <div>
+                            <a href="" class="options-link">Options</a>
+                            <small>
+                                <span class="text-success">{{property.option}}</span>
+                                <span class="text-danger" ng-show="!property.option">None selected</span>
+                            </small>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="pull-right delete-property"><shared-components-delete delete-item="property" on-delete-handler="remove(itemToDelete)"></shared-components-delete></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+//By convention, the name of this input file will be the name of the application
+{
+	//How would you describe your application?
+	"appDescription": "The first app ever created through yo meanjs-plus",
+
+	//How would you describe your application in comma seperated key words?
+	"appKeywords": "meanjs plus yeoman crud app web app",
+
+	//What is your company/author name?
+	"appAuthor": "Vishal Kumar",
+
+	//Which Bootstrap theme would you like to include?
+	//Available Options (see  http://www.bootstrapcdn.com/#bootswatch_tab)
+	//Default Bootstrap Theme (default)
+	//cerulean			
+	//cosmo
+	//cyborg			
+	//darkly			
+	//flatly
+	//journal			
+	//lumen			
+	//paper			
+	//readable			
+	//sandstone			
+	//simplex			
+	//slate			
+	//spacelab			
+	//superhero			
+	//united			
+	//yeti
+	"bootstrapTheme": "spacelab"
+
+}

@@ -1,0 +1,53 @@
+.select-item .selected-item {
+    z-index: 2;
+    color: #fff !important;
+    background-color: #81b33a !important;
+    border-color: #F47C3C !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+}
+
+.select-item .gray-out {
+    color: lightgray !important;
+    background-color: #fff !important;
+    border-color: #lightgray !important;
+}
+
+.select-item .gray-out .badge{
+    color: lightgray !important;
+    background-color: #fff !important;
+    border-color: #lightgray !important;
+}
+
+.select-item .list-group-item>.badge {
+    float: left;
+    margin-right: 20px;
+}
+
+.select-item .item-selection-status.swing, .items .item-existing.swing
+{
+        -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+}
+
+.select-item .list-group {
+	max-height: 800px;
+	overflow: auto;
+}
+
+@media (min-width: 768px) {
+	.select-item .item-tree-view {
+    	width: 590px;
+    	overflow: auto;
+	}    
+}
+
+@media (min-width:992px) {
+	.select-item .item-tree-view {
+		width: 890px;
+		overflow: auto;
+	}
+}
+

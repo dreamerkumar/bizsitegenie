@@ -1,0 +1,20 @@
+<div class="dashboard-widget box" ng-class="{'no-content': !widget.directiveName && !widget.widgetHeading && !widget.widgetSubHeading}">
+    <div class="box-header">
+        <div class="box-header-btns pull-right" data-ng-show="((authentication.user) && (authentication.user._id === dashboardId))">
+            <a title="Heading and Info" ng-click="openWidgetInfoEditor(widget)"><i class="glyphicon glyphicon-info-sign"></i></a>
+            <a title="Settings" ng-click="openWidgetContentSelector(widget)"><i class="glyphicon glyphicon-cog"></i></a>
+            <a title="Remove widget" ng-click="remove(widget)"><i class="glyphicon glyphicon-trash"></i></a>
+        </div>
+    </div>
+    <div class="box-content">
+		<div class="dashboard-widget-box-content-header">
+			<h3 class="text-center">{{widget.widgetHeading}}</h3>
+			<p class="text-center">{{widget.widgetSubHeading}}</p>
+		</div>
+		<div class="dashboard-widget-box-content-display">
+			<div class="dashboard-widget-box-content-display-contents">
+    			<compile-directive></compile-directive>
+    		</div>
+    	</div>
+    </div>
+</div>

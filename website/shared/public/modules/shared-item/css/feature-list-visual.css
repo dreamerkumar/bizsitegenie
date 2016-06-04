@@ -1,0 +1,63 @@
+
+item-list-visual .node {
+  cursor: pointer;
+}
+
+item-list-visual .node.existing-node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 15px;
+}
+
+item-list-visual .node.existing-node text {
+  font-size: 20px;
+  padding-right:50px;
+  fill: orange;
+}
+
+item-list-visual .node.add-new-node circle {
+  fill: none;
+  stroke: #93c54b;
+  stroke-dasharray: 2,1;
+  stroke-width: 20px;
+}
+
+item-list-visual .node.add-new-node text {
+  font-size: 20px;
+  padding-right:50px;
+  fill: #93c54b;
+}
+
+.select-item item-list-visual .node.zero-properties circle, item-list-visual .node.gray-out circle, {
+  fill: none;
+  stroke: lightgray;
+  stroke-width: 20px;
+}
+
+.select-item item-list-visual .node.zero-properties text, item-list-visual .node.gray-out text {
+  font-size: 20px;
+  padding-right:50px;
+  fill: lightgray;
+}
+
+item-list-visual .link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 3px;
+}
+
+.item-tree-view.configure .node-click-help-text, .item-tree-view.select .node-click-help-text {
+  fill: #fff;
+  stroke: steelblue;
+  color: steelblue;
+  stroke-width: 15px;
+}
+
+.item-tree-view.configure .node-text-click-help-text, .item-tree-view.select .node-text-click-help-text {
+  font-size: 20px;
+  padding-right:50px;
+  color: orange;
+  fill: orange;
+}
+
+

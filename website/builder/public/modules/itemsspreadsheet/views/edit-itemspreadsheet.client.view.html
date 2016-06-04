@@ -1,0 +1,58 @@
+<section data-ng-controller="ItemspreadsheetController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Itemspreadsheet</h1>
+
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="fileName">File name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="itemspreadsheet.fileName" id="fileName" class="form-control" placeholder="File name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="fileKey">File key</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="itemspreadsheet.fileKey" id="fileKey" class="form-control" placeholder="File key" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="parentId">Parent id </label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="itemspreadsheet.parentId" id="parentId" class="form-control" placeholder="Parent id " required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="status">Status</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="itemspreadsheet.status" id="status" class="form-control" placeholder="Status" required>
+                    </div>
+                </div>
+                <div class="form-group">
+		    <label class="control-label" for="updated">Updated</label>
+		    <div class="dropdown">
+				<a class="dropdown-toggle" id="updated" role="button" data-toggle="dropdown" data-target="#" href="#">
+					<div class="input-group"><input type="text" class="form-control" data-ng-model="itemspreadsheet.updated"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+					</div>
+				</a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+					<datetimepicker data-ng-model="itemspreadsheet.updated" data-datetimepicker-config="{ dropdownSelector: '#updated' }"/>
+				</ul>
+			</div>
+		</div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-primary">
+                    <a class="btn btn-default" data-ng-href="#!{{parentRouteUrl}}/itemspreadsheet/{{itemspreadsheet._id}}">
+                        Cancel
+                    </a>            
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

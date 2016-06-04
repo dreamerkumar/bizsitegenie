@@ -1,0 +1,100 @@
+{
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Check or uncheck this item",
+			"tagName": "input",
+			"attributes": {
+				"type": "checkbox",
+				"value": "Check or uncheck this item"
+			}
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Some line of text"
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Give me your email",
+			"tagName": "input",
+			"attributes": {
+				"type": "email"
+			}
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "And what's your password",
+			"tagName": "input",
+			"attributes": {
+				"type": "password"
+			}
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Select one of the options",
+			"tagName": "input",
+			"attributes": {
+				"type": "radio"
+			},
+			"inputTagRadioTypeOptions": [
+				{
+					"text": "Option 1",
+					"attributes": {
+						"value": "Option 1"
+					}
+				},
+				{
+					"text": "Option 2",
+					"attributes": {
+						"value": "Option 2"
+					}
+				},
+				{
+					"text": "Option 3",
+					"attributes": {
+						"value": "Option 3"
+					}
+				}
+			]
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Select from the below options",
+			"tagName": "select",
+			"selectTagOptions": [
+				{
+					"text": "option 1",
+					"attributes": {
+						"value": "option 1"
+					}
+				},
+				{
+					"text": "option 2",
+					"attributes": {
+						"value": "option 2"
+					}
+				},
+				{
+					"text": "option 3",
+					"attributes": {
+						"value": "option 3"
+					}
+				}
+			]
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Enter As Much Text As You Want",
+			"tagName": "textarea",
+			"attributes": {
+				"rows": "2",
+				"cols": "30"
+			}
+		}
+	],
+
+	"childModules": [{		
+		"name": "First Born",
+		"properties" : [{"propertyLabel": "First Name"},{"propertyLabel": "Last Name"}]
+	}]
+}

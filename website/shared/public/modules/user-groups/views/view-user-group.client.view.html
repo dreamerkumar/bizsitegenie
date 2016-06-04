@@ -1,0 +1,32 @@
+<section data-ng-controller="UserGroupsController" data-ng-init="findOne()" class="view-user-group">
+	<div class="page-header">
+		<div class="buttons-and-heading-container">
+            <div class="left-buttons">
+				<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/user-groups">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+			</div>
+		    <div class="text-center center-content">
+	            <h1>User group - <span data-ng-bind="userGroup.name"></span></h1>
+	        </div>
+			<div class="right-buttons" data-ng-show="((authentication.user) && (authentication.user._id == userGroup.user._id))">
+				<a class="btn btn-primary" data-ng-click="remove();" ng-show="userGroup.name !== 'creator'">
+					<i class="glyphicon glyphicon-trash"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div ng-show="error" class="text-danger">
+			{{error}}
+		</div>
+		<uib-tabset justified="true">
+			<uib-tab heading="Assign Users" >
+				<bsg-select-multiple-by-id service-name="SharedUser" display-properties="displayName,email" on-select="addUser" on-unselect="removeUser" current-selection="userGroupUsers" title=""></bsg-select-multiple-by-id>
+			</uib-tab>
+			<uib-tab heading="Assign Roles" >
+				<bsg-select-multiple-by-id service-name="Roles" display-properties="name" on-select="addRole" on-unselect="removeRole" current-selection="userGroupRoles" title="" allow-add="true"></bsg-select-multiple-by-id>
+			</uib-tab>
+		</uib-tabset>
+	</div>
+</section>

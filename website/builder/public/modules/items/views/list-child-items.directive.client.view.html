@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row  row-centered">
+        <a data-ng-repeat="item in items" data-ng-href="/builder#!{{parentRouteUrl}}/items/{{item._id}}" class="item item-existing col-md-12  col-centered" ng-class="{swing: item.isNew}">
+            <div class="text-center item-name">
+                <h2>A collection of</h2>
+                <h3>{{item.name}}</h3>
+            </div>
+        </a>
+
+        <create-item app-id="{{appId}}" parent-crud-id="{{parentCrudId}}" on-successful-item-add="addItemToList(item)"></create-item>
+    </div>
+</div>

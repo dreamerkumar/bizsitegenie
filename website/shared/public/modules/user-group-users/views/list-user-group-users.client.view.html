@@ -1,0 +1,30 @@
+<section data-ng-controller="UserGroupUsersController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+        </div>
+        <h1>User group users</h1>
+    </div>
+    <div class="list-group">
+        <fieldset  data-ng-show="userGroupUsers.$resolved && userGroupUsers.length && userGroupUsers.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <a data-ng-repeat="userGroupUser in userGroupUsers | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/user-group-users/{{userGroupUser._id}}" class="list-group-item">
+            <h4 class="list-group-item-heading">
+            	<span data-ng-bind="userGroupUser.userId.displayName"></span>
+            </h4>
+            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!userGroupUsers.$resolved || userGroupUsers.length">
+    	No users assigned to this user group
+    </div> 
+</section>

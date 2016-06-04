@@ -1,0 +1,13 @@
+<div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-search"></i>
+	<input type="text" ng-model="userEntry" typeahead-template-url="searchResults.html"
+       vk-typeahead="value[matchPropertyName] for value in search($viewValue)" typeahead-wait-ms="500" match-property-name="{{matchPropertyName}}"
+       typeahead-on-select="typeaheadOnSelect($item, $model, $label)" class="lookupfromproperty-search-box" placeholder="Please enter some characters here to search and select a new value">
+</div>
+<script type="text/ng-template" id="searchResults.html">
+    <div>
+        <div>
+            {{match.model[matchPropertyName]}}
+        </div>                
+    </div>
+</script>

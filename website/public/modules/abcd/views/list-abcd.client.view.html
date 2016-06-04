@@ -1,0 +1,117 @@
+<section class="list-items" data-ng-controller="AbcdController" data-ng-init="find()">
+    <section data-ng-show="listViewAuthorized">
+        <div class="page-header">
+            <div class="buttons-and-heading-container">
+                <div class="left-buttons">
+                    <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </div>
+                <div class="text-center center-content">
+                    <h1>Abcds</h1>
+                </div>
+                <div class="right-buttons">
+                    <a class="pull-right btn btn-primary" data-ng-show="(createAccessType === 'hasAccess')" href="/#!{{parentRouteUrl}}/abcd/create">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <uib-tabset justified="true">
+            <uib-tab heading="List View">
+                <p></p>
+                <div class="list-group">
+                    <fieldset  data-ng-show="abcd.$resolved && abcd.length && abcd.length > 1">
+                        <div class="form-group">
+                            <div class="controls">
+                                <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <a data-ng-repeat="abcd in abcd | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/abcd/{{abcd._id}}" class="list-group-item">
+            			<small class="list-group-item-text">
+            				Created
+            				<span data-ng-bind="abcd.created | date:'medium'"></span>
+            				by
+            				<span data-ng-bind="abcd.user.displayName"></span>
+            			</small>
+                        <h4 class="list-group-item-heading">
+	<strong>a</strong>
+	<span data-ng-bind="abcd.a"></span>
+</h4>
+                        <h4 class="list-group-item-heading">
+	<strong>b</strong>
+	<span data-ng-bind="abcd.b"></span>
+</h4>
+                        <h4 class="list-group-item-heading">
+	<strong>c</strong>
+	<span data-ng-bind="abcd.c"></span>
+</h4>
+                        <h4 class="list-group-item-heading">
+	<strong>d</strong>
+	<span data-ng-bind="abcd.d"></span>
+</h4>
+                        
+                    </a>
+                </div>
+                <div class="alert alert-info text-center" data-ng-hide="!abcd.$resolved || abcd.length">
+                	<h4>
+                        No Abcds yet.
+                        <a href="/#!{{parentRouteUrl}}/abcd/create"  data-ng-show="(createAccessType === 'hasAccess')">
+                            Create one
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </h4>
+                </div>
+            </uib-tab>
+            <uib-tab heading="Grid View">
+                <p></p>
+                <table st-table="displayedCollection" st-safe-src="abcd" class="table">
+                    <thead>
+                    <tr>
+                        <th st-sort="a">a</th>
+                        <th st-sort="b">b</th>
+                        <th st-sort="c">c</th>
+                        <th st-sort="d">d</th>
+                        
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th><input st-search="a" placeholder="filter by a" class="input-sm form-control" type="search"/></th>
+                        <th><input st-search="b" placeholder="filter by b" class="input-sm form-control" type="search"/></th>
+                        <th><input st-search="c" placeholder="filter by c" class="input-sm form-control" type="search"/></th>
+                        <th><input st-search="d" placeholder="filter by d" class="input-sm form-control" type="search"/></th>
+                        
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in displayedCollection">
+                        
+                        <td><span data-ng-bind="row.a"></span>
+</td>
+                        <td><span data-ng-bind="row.b"></span>
+</td>
+                        <td><span data-ng-bind="row.c"></span>
+</td>
+                        <td><span data-ng-bind="row.d"></span>
+</td>
+                        
+                        <td><a data-ng-href="#!{{parentRouteUrl}}/abcd/{{row._id}}"><i class="glyphicon glyphicon-menu-right"></i></a></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" class="text-center">
+                                <div st-pagination="" st-items-by-page="15" st-displayed-pages="7"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </uib-tab>
+            <uib-tab heading="Dashboards">
+            </uib-tab>
+        </uib-tabset>
+    </section>
+    <bsg-user-unauthorized unauthorized="listViewUnauthorized"></bsg-user-unauthorized>
+</section>

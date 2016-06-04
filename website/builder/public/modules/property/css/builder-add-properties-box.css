@@ -1,0 +1,129 @@
+.builder-add-properties-box-outer {
+  position: relative;
+}
+
+.builder-add-properties-box {
+  font-family: Roboto, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin-top: 10;
+  padding: 0;
+  color: #FFF;
+  background: #FAFAFA;
+}
+
+.builder-add-properties-box h1 {
+  font-weight: 700;
+  font-size: 36px;
+  margin: 0px 0 0 0;
+  padding: 0 20px;
+}
+
+.builder-add-properties-box p {
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.builder-add-properties-box em {
+  font-style: normal;
+  color: #FFC400;
+}
+
+.builder-add-properties-box .sub {
+  margin: 0;
+}
+
+.builder-add-properties-box .button {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  font-size: 30px;
+  line-height: 60px;
+  -webkit-transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.builder-add-properties-box .button.expand {
+  -webkit-transform: rotate(585deg);
+  transform: rotate(585deg);
+  -webkit-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.builder-add-properties-box .builder-add-properties-box-container {
+  position: absolute;
+  z-index: 1000;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #81b33a;
+  border-radius: 50%;
+  width: 60px;
+  max-width: 60px;
+  height: 60px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+  -webkit-transition: all 0.2s 0.45s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+  transition: all 0.2s 0.45s, height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.25s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+}
+
+.builder-add-properties-box .builder-add-properties-box-container.expand {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.17);
+  border-radius: 0;
+  width: 80%;
+  height: 500px;
+  max-width: 700px;
+  padding: 0;
+  -webkit-transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;
+  transition: all 0.2s, max-width 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, height 0.3s ease 0.25s;
+}
+
+.builder-add-properties-box .content {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+  margin-top:0px;
+  opacity: 0;
+  text-align: left;
+  -webkit-transition: opacity 0.2s 0.2s, -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.2s 0.2s, -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s 0.2s, -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.builder-add-properties-box .content.expand {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+  -webkit-transition: opacity 0s, -webkit-transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+  transition: opacity 0s, -webkit-transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, opacity 0s, -webkit-transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+}
+
+.builder-add-properties-box .content .head {
+  padding: 0 0 20px 0;
+}
+
+.builder-add-properties-box .content .builder-add-properties-box-container-body {
+  color: #000;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #FFF;
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.builder-add-properties-box-container-body textarea.form-control {
+  height: 275px;
+}
+
+
+.builder-add-properties-box-space-keeper {
+  height: 70px;
+}

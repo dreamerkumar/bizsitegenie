@@ -1,0 +1,30 @@
+<section data-ng-controller="HomeController" class='home-client-view-linepress'>
+	<section class="content-container" >
+		<div>
+			<div data-ng-hide="authentication && authentication.user">
+				<h1 class="main-heading">
+					Web Application
+				</h1>
+				<a href="/#!/signin" class="link-button">Sign In</a>
+				<a href="/#!/signup" class="link-button">Sign Up</a>
+			</div>
+			<div ng-show="buildRoleDoesNotExist">
+				<h4>Welcome <span data-ng-bind="authentication.user.displayName"></span>,</h4> 
+				<h4>Let us help you build the perfect website just the way you want!</h4>
+				<h4>&nbsp;</h4>
+				<a href="/builder#!/" class="btn btn-success btn-lg" >Start Creating Your Amazing Website</a>		
+			</div>
+			<div ng-if="roleCheckDone && !buildRoleDoesNotExist">
+				<div class="items" data-ng-if="menu.shouldRender(authentication.user);">
+					<div class="row  row-centered">
+					    <a data-ng-repeat="item in menu.items[0].items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ui-route="{{item.uiRoute}}" class="item item-existing col-md-12  col-centered" data-ng-href="/#!/{{item.link}}">
+					        <div class="text-center item-name">
+					            <h3>{{item.title}}</h3>
+					        </div>
+					    </a>
+					 </div>
+				 </div>
+			 </div>
+		</div>
+	</section>
+</section>

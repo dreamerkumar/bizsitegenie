@@ -1,0 +1,30 @@
+<section data-ng-controller="FourthOfFoursController" data-ng-init="findOne()">
+	<div class="page-header">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/fourth-of-fours">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<h1>Fourth of four Details</h1>
+		<h3>
+	<strong>Name</strong>
+	<span data-ng-bind="fourthOfFour.name"></span>
+</h3>
+        
+        
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == fourthOfFour.user._id))">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/fourth-of-fours/{{fourthOfFour._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Created
+			<span data-ng-bind="fourthOfFour.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="fourthOfFour.user.displayName"></span>
+		</em>
+	</small>
+</section>

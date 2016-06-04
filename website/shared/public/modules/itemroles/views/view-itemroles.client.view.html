@@ -1,0 +1,38 @@
+<section data-ng-controller="ItemrolesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/itemroles">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<h1>Itemrole Details</h1>
+		<h3>
+	<strong>parent id</strong>
+	<span data-ng-bind="itemroles.parentId"></span>
+</h3>
+        <h3>
+	<strong>accesstype</strong>
+	<span data-ng-bind="itemroles.accesstype"></span>
+</h3>
+        <h3>
+	<strong>role</strong>
+	<span data-ng-bind="itemroles.role"></span>
+</h3>
+        
+        
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == itemroles.user._id))">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/itemroles/{{itemroles._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Created
+			<span data-ng-bind="itemroles.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="itemroles.user.displayName"></span>
+		</em>
+	</small>
+</section>

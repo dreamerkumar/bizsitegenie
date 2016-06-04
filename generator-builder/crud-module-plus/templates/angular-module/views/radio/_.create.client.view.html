@@ -1,0 +1,8 @@
+<div class="form-group">
+				    <label class="control-label" for="<%=camelizedSingularName%>"><%=humanizedSingularName%></label><% inputTagRadioTypeOptions.forEach(function(opt){ %>
+                    <div class="radio">
+                    	<label>
+				        	<input type="radio" name="<%=camelizedSingularName%>" data-ng-model="<%=camelizedSingularName%>" <% for(var optAtt in opt.attributes){if(opt.attributes.hasOwnProperty(optAtt)){ %><%=optAtt%>="<%=opt.attributes[optAtt]%>" <% } } %>><%=opt.text%>
+                    	</label>
+					</div><% }) %>
+				</div>

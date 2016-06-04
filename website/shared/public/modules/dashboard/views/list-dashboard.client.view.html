@@ -1,0 +1,43 @@
+<section data-ng-controller="DashboardController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="buttons-and-heading-container">
+            <div class="left-buttons">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="text-center center-content">
+                <h1>Dashboards</h1>                
+            </div>
+            <div class="right-buttons">
+                <a class="pull-right btn btn-primary" href="/#!{{parentRouteUrl}}/dashboard/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="list-group">
+        <fieldset  data-ng-show="dashboard.$resolved && dashboard.length && dashboard.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <a data-ng-repeat="dashboard in dashboard | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/dashboard/{{dashboard._id}}" class="list-group-item">
+         <small class="list-group-item-text">
+            Created
+            <span data-ng-bind="dashboard.created | date:'medium'"></span>
+            by
+            <span data-ng-bind="dashboard.user.displayName"></span>
+        </small>
+        <h4 class="list-group-item-heading">
+           <strong>name</strong>
+           <span data-ng-bind="dashboard.name"></span>
+       </h4>
+   </a>
+</div>
+<div class="alert alert-warning text-center" data-ng-hide="!dashboard.$resolved || dashboard.length">
+   No Dashboards yet, why don't you <a href="/#!{{parentRouteUrl}}/dashboard/create">create one</a>?
+</div> 
+</section>

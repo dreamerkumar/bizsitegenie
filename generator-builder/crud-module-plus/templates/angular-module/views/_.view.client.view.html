@@ -1,0 +1,40 @@
+<section class="view-item" data-ng-controller="<%= classifiedPluralName %>Controller" data-ng-init="findOneForRead()">
+	<section data-ng-show="authorized">
+		<div class="page-header">
+			<div class="buttons-and-heading-container">
+				<div class="left-buttons">	
+					<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/<%=slugifiedPluralName%>">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+				</div>
+				<div class="text-center center-content">
+					<h1><%=humanizedSingularName%> Details</h1>
+				</div>
+				<div class="right-buttons">
+				</div>
+			</div>
+		</div>
+		<div>
+			<% properties.forEach(function(prop){ %><%- include('{0}/_.{1}.client.view.html'.format(prop.formFieldType, viewType), prop) %>
+	        <% }) %>
+	        <%if(origArgs.childModules) {origArgs.childModules.forEach(function(childModule){%><%- include('_.child.crud.link.html', childModule.options) %><%});}%>
+		</div>
+		<div class="pull-right">
+			<a class="btn btn-primary" data-ng-show="((editAccessType === 'hasAccess') || (editAccessType === 'hasAccessIfUserCreatedIt' && authentication.user._id === <%= camelizedSingularName %>.user._id))" href="/#!{{parentRouteUrl}}/<%= slugifiedPluralName %>/{{<%= camelizedSingularName %>._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i>
+			</a>
+			<a class="btn btn-primary" data-ng-show="((deleteAccessType === 'hasAccess') || (deleteAccessType === 'hasAccessIfUserCreatedIt' && authentication.user._id === <%= camelizedSingularName %>.user._id))" data-ng-click="remove();">
+				<i class="glyphicon glyphicon-trash"></i>
+			</a>
+		</div>
+		<small>
+			<em class="text-muted">
+				Created
+				<span data-ng-bind="<%= camelizedSingularName %>.created | date:'mediumDate'"></span>
+				by
+				<span data-ng-bind="<%= camelizedSingularName %>.user.displayName"></span>
+			</em>
+		</small>
+	</section>
+	<bsg-user-unauthorized unauthorized="unauthorized"></bsg-user-unauthorized>
+</section>

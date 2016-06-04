@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row  row-centered list-view-help">
+        <h4 ng-if="items.length > 0">Below are the current list of root level items. Click on them to go to their details.</h4>
+        <h4 ng-if="items.length === 0">Create your first item by first entering the item name below.</h4>
+    </div>
+    <div class="row  row-centered">
+        <a data-ng-repeat="item in items | parentCrudOnly" data-ng-href="/builder#!{{parentRouteUrl}}/items/{{item._id}}" 
+            class="item item-existing col-md-12  col-centered" ng-class="{swing: item.isNew}">
+            <div class="text-center item-name">
+                <h2>A collection of</h2>
+                <h3>{{item.name}}</h3>
+            </div>
+        </a>
+        <create-item app-id="{{appId}}" parent-crud-id="0" on-successful-item-add="addItemToList(item)"></create-item>
+     </div>
+ </div>

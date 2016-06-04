@@ -1,0 +1,33 @@
+<section class="apps review-details text-center" data-ng-controller="AppsController" data-ng-init="findOne()" data-ng-show="((authentication.user) && (authentication.user._id == app.user._id))">
+	<div class="page-header">
+        <div class="buttons-and-heading-container">
+            <div class="left-buttons">
+				<a class="btn btn-primary" data-ng-href="/builder#!">
+	                <span class="glyphicon glyphicon-home"></span>
+	            </a>
+            	<a class="btn btn-primary" data-ng-href="/builder#!/apps/{{appId}}/items">
+					<span class="glyphicon glyphicon-th-list"></span>
+					Items Home
+				</a>
+			</div>
+			<div class="text-center center-content">
+				<h1>Update Application</h1>
+			</div>
+            <div class="right-buttons">
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>			
+		</div>
+	</div>
+	<div class="jumbotron">
+		<p>
+			Click on the below button to update the application.<br/><br/>
+			This will generate the forms and views for the items that you have configured.<br/><br/>
+			<small class="text-danger">The application will restart after the updates. So make sure you update it at a time when users are not active on your site.</small>
+		</p>
+		<p>
+			<a class="btn btn-success btn-lg btn-create-app" data-ng-click="generateItems()" role="button">
+				<span class="glyphicon glyphicon-refresh"></span>&nbsp;Update Application
+			</a>
+		</p>
+	</div>
+</section>

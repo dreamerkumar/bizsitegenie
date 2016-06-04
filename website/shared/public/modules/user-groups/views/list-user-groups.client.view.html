@@ -1,0 +1,40 @@
+<section data-ng-controller="UserGroupsController" data-ng-init="find()" class="list-user-groups">
+    <div class="page-header">
+        <div class="buttons-and-heading-container">
+            <div class="left-buttons">
+                <a class="pull-left btn btn-primary" href="/builder#!/">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="text-center center-content">
+                <h1>User Groups</h1>
+            </div>
+            <div class="right-buttons">
+                <a class="pull-right btn btn-primary" href="/#!{{parentRouteUrl}}/user-groups/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="text-left add-user-groups-container">
+        <bsg-add-new-with-name on-successful-add="addToList" service-name="UserGroups"></bsg-add-new-with-name>
+    </div>
+    <div class="list-group">
+        <fieldset  data-ng-show="userGroups.$resolved && userGroups.length && userGroups.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <a data-ng-repeat="userGroup in userGroups | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/user-groups/{{userGroup._id}}" class="list-group-item">
+            <h4 class="list-group-item-heading">
+            	<span data-ng-bind="userGroup.name"></span>
+                <i class="glyphicon glyphicon-menu-right pull-right"></i>
+            </h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!userGroups.$resolved || userGroups.length">
+    	No User groups yet, why don't you <a href="/#!{{parentRouteUrl}}/user-groups/create">create one</a>?
+    </div> 
+</section>

@@ -1,0 +1,32 @@
+<section data-ng-controller="FirstOfFoursController" data-ng-init="findOne()">
+	<div class="page-header">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/first-of-fours">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<h1>First of four Details</h1>
+		<h3>
+	<strong>Name</strong>
+	<span data-ng-bind="firstOfFour.name"></span>
+</h3>
+        
+        		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/first-of-fours/{{firstOfFour._id}}/second-of-fours">
+			Second of fours
+		</a>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == firstOfFour.user._id))">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/first-of-fours/{{firstOfFour._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Created
+			<span data-ng-bind="firstOfFour.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="firstOfFour.user.displayName"></span>
+		</em>
+	</small>
+</section>

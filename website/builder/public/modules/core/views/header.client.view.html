@@ -1,0 +1,45 @@
+<div ng-class="{container: !$root.displayExpandedView}" data-ng-controller="HeaderController" ng-show="userRoles.build">
+	<div class="navbar-header">
+		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a href="/#!/" class="navbar-brand" title="Preview"><span class="glyphicon glyphicon-home"></a>
+		<a href="/builder#!/" class="navbar-brand" title="Configure"><span class="glyphicon glyphicon-cog"></a>
+	</div>
+	<nav class="collapse navbar-collapse" uib-collapse="!isCollapsed" role="navigation">
+		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
+			<li ui-route="/signup" ng-class="{active: $uiRoute}">
+				<a href="/builder#!/signup">Sign Up</a>
+			</li>
+			<li class="divider-vertical"></li>
+			<li ui-route="/signin" ng-class="{active: $uiRoute}">
+				<a href="/builder#!/signin">Sign In</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
+			<li uib-dropdown>
+				<a href="#" uib-dropdown-toggle>
+					<span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+				</a>
+				<ul class="uib-dropdown-menu">
+					<li>
+						<a href="/builder#!/settings/profile">Edit Profile</a>
+					</li>
+					<li>
+						<a href="/builder#!/settings/accounts">Manage Social Accounts</a>
+					</li>
+					<li data-ng-show="authentication.user.provider === 'local'">
+						<a href="/builder#!/settings/password">Change Password</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="/auth/signout">Signout</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>

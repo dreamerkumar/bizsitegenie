@@ -1,0 +1,6 @@
+<div class="form-group">
+				    <label class="control-label" for="<%=camelizedSingularName%>"><%=humanizedSingularName%></label>
+				    <div class="controls">
+				        <input <% for(var att in attributes){if(attributes.hasOwnProperty(att)){ %><%=att%>="<%=attributes[att]%>" <% }} %>data-ng-model="<%=camelizedSingularName%>" id="<%=camelizedSingularName%>" class="form-control" placeholder="<%=humanizedSingularName%>" required>
+				    </div>
+				</div>

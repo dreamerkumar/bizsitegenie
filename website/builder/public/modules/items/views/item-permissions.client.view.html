@@ -1,0 +1,108 @@
+<section class="items review-details text-center" data-ng-controller="ItemPermissions" data-ng-show="((authentication.user) && (authentication.user._id == item.user._id))">
+	<item-header item-page-type="Permissions"></item-header>
+	<div class="permissions">
+		<div data-ng-show="error" class="text-danger">
+	        <div data-ng-bind="error"></div>
+	    </div>
+		<uib-tabset justified="true">
+			<uib-tab heading="Read" >
+				<h3 class="text-left text-success">Who can view items of this type?</h3>
+				<div class="row">
+					<div class="col-xs-12 text-left">
+						<div class="radio">
+							<label><input type="radio" name="read" ng-model="accessSelections.read" value="everyone" ng-change="saveSelection('read')">Everyone</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="read" ng-model="accessSelections.read" value="allloggedinusers" ng-change="saveSelection('read')">All logged in users</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="read" ng-model="accessSelections.read" value="onlycreator" ng-change="saveSelection('read')">Only the <span class="text-success">user who created the item</span></label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="read" ng-model="accessSelections.read" value="creatorandroles" ng-change="saveSelection('read')"><span class="text-success">User who created the item</span> and users with selected roles</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="read" ng-model="accessSelections.read" value="roles" ng-change="saveSelection('read')">Only users with selected roles</label>
+						</div>
+					</div>
+				</div>
+				<div class="text-left select-roles-container">
+					<bsg-select-multiple-by-name title="Select roles" service-name="Roles" ng-show="accessSelections.read === 'creatorandroles' || accessSelections.read === 'roles'" on-select="addReadRole" on-unselect="removeReadRole" current-selection="readRoleList"></bsg-select-multiple-by-name>
+				</div>
+			</uib-tab>
+			<uib-tab heading="Create">
+				<h3 class="text-left text-success">Who can create new items of this type?</h3>
+				<div class="row">
+					<div class="col-xs-12 text-left">
+						<div class="radio">
+							<label><input type="radio" name="create" ng-model="accessSelections.create" value="allloggedinusers" ng-change="saveSelection('create')">All logged in users</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="create" ng-model="accessSelections.create" value="roles" ng-change="saveSelection('create')">Only users with selected roles</label>
+						</div>
+					</div>
+				</div>
+				<div class="text-left select-roles-container">
+					<bsg-select-multiple-by-name title="Select roles" service-name="Roles" ng-show="accessSelections.create === 'creatorandroles' || accessSelections.create === 'roles'" on-select="addCreateRole" on-unselect="removeCreateRole" current-selection="createRoleList"></bsg-select-multiple-by-name>
+				</div>				
+			</uib-tab>
+			<uib-tab heading="Edit">
+				<h3 class="text-left text-success">Who can change items of this type?</h3>
+				<div class="row">
+					<div class="col-xs-12 text-left">
+						<div class="radio">
+							<label><input type="radio" name="edit" ng-model="accessSelections.edit" value="allloggedinusers" ng-change="saveSelection('edit')">All logged in users</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="edit" ng-model="accessSelections.edit" value="onlycreator" ng-change="saveSelection('edit')">Only the <span class="text-success">user who created the item</span></label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="edit" ng-model="accessSelections.edit" value="creatorandroles" ng-change="saveSelection('edit')"><span class="text-success">User who created the item</span> and users with selected roles</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="edit" ng-model="accessSelections.edit" value="roles" ng-change="saveSelection('edit')">Only users with selected roles</label>
+						</div>
+					</div>
+				</div>
+				<div class="text-left select-roles-container">
+					<bsg-select-multiple-by-name title="Select roles" service-name="Roles" ng-show="accessSelections.edit === 'creatorandroles' || accessSelections.edit === 'roles'" on-select="addEditRole" on-unselect="removeEditRole" current-selection="editRoleList"></bsg-select-multiple-by-name>
+				</div>
+			</uib-tab>
+			<uib-tab heading="Delete">
+				<h3 class="text-left text-success">Who can delete items of this type?</h3>
+				<div class="row">
+					<div class="col-xs-12 text-left">
+						<div class="radio">
+							<label><input type="radio" name="delete" ng-model="accessSelections.delete" value="allloggedinusers" ng-change="saveSelection('delete')">All logged in users</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="delete" ng-model="accessSelections.delete" value="onlycreator" ng-change="saveSelection('delete')">Only the <span class="text-success">user who created the item</span></label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="delete" ng-model="accessSelections.delete" value="creatorandroles" ng-change="saveSelection('delete')"><span class="text-success">User who created the item</span> and users with selected roles</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="delete" ng-model="accessSelections.delete" value="roles" ng-change="saveSelection('delete')">Only users with selected roles</label>
+						</div>
+					</div>
+				</div>
+				<div class="text-left select-roles-container">
+					<bsg-select-multiple-by-name title="Select roles" service-name="Roles" ng-show="accessSelections.delete === 'creatorandroles' || accessSelections.delete === 'roles'" on-select="addDeleteRole" on-unselect="removeDeleteRole" current-selection="deleteRoleList"></bsg-select-multiple-by-name>
+				</div>
+			</uib-tab>			
+<!-- 			<uib-tab heading="Assign Permission">
+				<h3 class="text-left text-success">Who can manage permissions for items of this type?</h3>
+				<div class="row">
+					<div class="col-xs-12 text-left">
+						<div class="radio">
+							<label><input type="radio" name="manageaccess" ng-model="accessSelections.manageaccess" value="creatorandroles" ng-change="saveSelection('manageaccess')"><span class="text-success">User who created this item type</span> and users with selected roles</label>
+						</div>
+					</div>
+				</div>
+				<div class="text-left select-roles-container">
+					<bsg-select-multiple-by-name title="Select roles" service-name="Roles" ng-show="accessSelections.manageaccess === 'creatorandroles' || accessSelections.manageaccess === 'roles'" on-select="addManageAccessRole" on-unselect="removeManageAccessRole" current-selection="manageaccessRoleList"></bsg-select-multiple-by-name>
+				</div>
+			</uib-tab> -->
+		</uib-tabset>
+	</div>
+</section>

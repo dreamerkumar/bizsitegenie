@@ -1,0 +1,58 @@
+<section data-ng-controller="ItemspreadsheetController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="pull-right btn btn-primary" href="/#!{{parentRouteUrl}}/itemspreadsheet/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <h1>Itemspreadsheets</h1>
+    </div>
+    <div class="list-group">
+        <fieldset  data-ng-show="itemspreadsheet.$resolved && itemspreadsheet.length && itemspreadsheet.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <a data-ng-repeat="itemspreadsheet in itemspreadsheet | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/itemspreadsheet/{{itemspreadsheet._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created
+				<span data-ng-bind="itemspreadsheet.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="itemspreadsheet.user.displayName"></span>
+			</small>
+            <h4 class="list-group-item-heading">
+	<strong>file name</strong>
+	<span data-ng-bind="itemspreadsheet.fileName"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>file key</strong>
+	<span data-ng-bind="itemspreadsheet.fileKey"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>parent id </strong>
+	<span data-ng-bind="itemspreadsheet.parentId"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>status</strong>
+	<span data-ng-bind="itemspreadsheet.status"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>updated</strong>
+	<span data-ng-bind="itemspreadsheet.updated | date:'medium'"></span>
+</h4>
+            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!itemspreadsheet.$resolved || itemspreadsheet.length">
+    	No Itemspreadsheets yet, why don't you <a href="/#!{{parentRouteUrl}}/itemspreadsheet/create">create one</a>?
+    </div> 
+</section>

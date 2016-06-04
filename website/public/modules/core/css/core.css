@@ -1,0 +1,106 @@
+body {
+	color: #555;
+	font-family: 'Open Sans', sans-serif;
+}
+
+strong {
+    opacity: .8;
+}
+
+.view-item strong {
+	background: #EFE6E6;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.view-item img {
+	margin: 10px;
+}
+
+.content {
+	margin-top: 50px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+.items .item-existing {
+	background-color: #f5f5f5;
+	width:250px;
+	height:300px;
+	border-width: 0px;
+	margin:20px;
+	border-style: solid;
+	border-color: #93C54B;
+	color: white;
+	background: #676470;
+	transition: all 0.3s ease;
+}
+
+.items .item-existing:hover {
+	background:#53a7ea;
+	color: white;
+}
+
+.items .item-existing:link, .items .item-existing:visited, .items .item-existing:hover, .items .item-existing:active{
+    text-decoration: none;
+}
+
+.items .item-name {
+	margin-top:40px;
+}
+
+.items .item-name h3 {
+	margin-top:120px;
+	font-weight: bold;
+	font-size:30px;
+	overflow: hidden;
+}
+
+/* centered columns styles */
+.items .row-centered {
+    text-align:center;
+}
+
+.items .col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+    vertical-align: top;
+}
+
+.buttons-and-heading-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+
+.buttons-and-heading-container .left-buttons{
+	
+}
+
+.buttons-and-heading-container .center-content{
+	flex-grow:1;
+}
+
+.buttons-and-heading-container .right-buttons{
+	
+}
+
+.buttons-and-heading-container .center-content h1{
+	margin-top:5px;
+}
+

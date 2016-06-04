@@ -1,0 +1,27 @@
+<section data-ng-controller="UserGroupUsersController" data-ng-init="findOne()">
+	<div class="page-header">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/user-group-users">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<h1>User group user Details</h1>
+		<h3>
+	<strong>User</strong>
+	<span data-ng-bind="userGroupUser.userId.displayName"></span>
+</h3>
+        
+        
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == userGroupUser.user._id))">
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Created
+			<span data-ng-bind="userGroupUser.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="userGroupUser.user.displayName"></span>
+		</em>
+	</small>
+</section>

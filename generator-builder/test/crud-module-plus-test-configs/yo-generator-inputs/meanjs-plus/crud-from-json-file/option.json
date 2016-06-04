@@ -1,0 +1,6 @@
+//option is a reserved word. generating module with this file should name module as option1 instead of module
+{
+	"properties": [{
+		"propertyLabel": "test"
+	}]
+}

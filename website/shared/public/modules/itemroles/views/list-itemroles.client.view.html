@@ -1,0 +1,50 @@
+<section data-ng-controller="ItemrolesController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="pull-right btn btn-primary" href="/#!{{parentRouteUrl}}/itemroles/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <h1>Itemroles</h1>
+    </div>
+    <div class="list-group">
+        <fieldset  data-ng-show="itemroles.$resolved && itemroles.length && itemroles.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <a data-ng-repeat="itemroles in itemroles | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/itemroles/{{itemroles._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created
+				<span data-ng-bind="itemroles.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="itemroles.user.displayName"></span>
+			</small>
+            <h4 class="list-group-item-heading">
+	<strong>parent id</strong>
+	<span data-ng-bind="itemroles.parentId"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>accesstype</strong>
+	<span data-ng-bind="itemroles.accesstype"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>role</strong>
+	<span data-ng-bind="itemroles.role"></span>
+</h4>
+            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!itemroles.$resolved || itemroles.length">
+    	No Itemroles yet, why don't you <a href="/#!{{parentRouteUrl}}/itemroles/create">create one</a>?
+    </div> 
+</section>

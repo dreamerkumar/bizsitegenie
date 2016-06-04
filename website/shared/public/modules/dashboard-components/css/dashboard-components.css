@@ -1,0 +1,155 @@
+.wrap-dashboard {
+    margin: 75px 0px 10px 0px;
+    padding-bottom: 20px;
+}
+
+
+.dashboard .dashboard-header {
+    padding: 0;
+    margin: 20px 10px -10px 10px;
+}
+
+.dashboard .dashboard-header .dashboard-name {
+    min-height: 30px;
+    margin-left: 50px;
+    padding-top: 5px;
+}
+
+.dashboard .dashboard-header .dashboard-name .glyphicon-edit {
+    opacity: 0;
+}
+
+.dashboard .dashboard-header .dashboard-name:hover .glyphicon-edit {
+    opacity: 1;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.dashboard .dashboard-header .btn.pull-left {
+    margin-top:5px;
+}
+
+.dashboard .dashboard-header .pull-right {
+    margin-top: 5px;
+}
+
+.dashboard-header .pull-right .btn {
+    margin-left: 5px;
+}
+
+.dashboard .controls {
+    margin-bottom: 20px;
+}
+
+.dashboard ul {
+    list-style: none;
+}
+
+.dashboard .box.no-content {
+    background-color: rgba(204, 204, 204, 1);
+    transition: 1s;
+}
+
+.dashboard .box {
+    height: 100%;
+    /*border: 1px solid #ccc;*/
+    background-color: #fff;
+    padding-top: 35px;
+}
+.dashboard .box-header {
+    background-color: #eee;
+    padding: 0 42px 0 10px;
+    /*border: 1px solid #ccc;*/
+    cursor: move;
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    top: 0;
+    left: 0;
+
+}
+
+.dashboard .gridster-item .box-header {
+    opacity: 0;
+}
+
+.dashboard .gridster-item:hover .box-header{
+    opacity: 1;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.dashboard .gridster-item .box{
+    border: 1px solid rgba(255, 255, 255, 1);
+
+}
+
+.dashboard .gridster-item:hover .box{
+    border: 1px solid rgba(204, 204, 204, 1);
+    transition: 1s;
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.dashboard .box-header h3 {
+    width: 100%;
+    font-size: 20px;
+    margin: 6px 0px;
+    display: inline-block;
+}
+.dashboard .box-content {
+    height: 100%;
+    padding: 5px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    flex-flow: column;
+}
+.dashboard .box-header-btns {
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+    position: absolute;
+}
+.dashboard .box-header-btns a {
+    color: #ccc;
+}
+
+.dashboard .box-content .dashboard-widget-box-content-header {
+    overflow: auto;
+}
+
+.dashboard .box-content .dashboard-widget-box-content-display {
+    flex: 1;
+    position: relative;
+}
+
+/*http://stackoverflow.com/questions/15381172/css-flexbox-child-height-100*/
+.dashboard .box-content .dashboard-widget-box-content-display-contents {
+    position:absolute;
+    height: 100%;
+    width: 100%
+}
+
+.dashboard form {
+    margin-bottom: 0;
+}
+.dashboard .gridster {
+    border: 0; /* solid #ccc;*/
+}
+
+/* Modal */
+.dashboard .modal {
+    overflow-y: hidden;
+}
+
+.dashboard-footer {
+    margin-left: 10px;
+    margin-right: 10px;
+}

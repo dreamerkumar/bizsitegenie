@@ -1,0 +1,26 @@
+<section class="edit-item" data-ng-controller="<%= classifiedPluralName %>Controller"  data-ng-init="findOneForEdit()">
+    <section data-ng-show="authorized">
+        <div class="page-header">
+            <h1>Edit <%= humanizedSingularName %></h1>
+    <%if(origArgs.childModules) {origArgs.childModules.forEach(function(childModule){%><%- include('_.child.crud.link.html', childModule.options) %><%});}%>
+        </div>
+        <div class="col-md-12">
+            <form class="form-horizontal" data-ng-submit="update()" novalidate>
+                <fieldset>
+                    <% properties.forEach(function(prop){ %><%- include('{0}/_.{1}.client.view.html'.format(prop.formFieldType, viewType), prop) %>
+                    <% }) %>
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn btn-primary">
+                        <a class="btn btn-default" data-ng-href="#!{{parentRouteUrl}}/<%= slugifiedPluralName %>/{{<%= camelizedSingularName %>._id}}">
+                            Cancel
+                        </a>            
+                    </div>
+    				<div data-ng-show="error" class="text-danger">
+    					<strong data-ng-bind="error"></strong>
+    				</div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <bsg-user-unauthorized unauthorized="unauthorized"></bsg-user-unauthorized>
+</section>

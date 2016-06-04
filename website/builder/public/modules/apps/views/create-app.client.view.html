@@ -1,0 +1,19 @@
+<section data-ng-controller="AppsController" class="apps">
+    <h1 class="text-center">What would you like to name your app?</h1>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+				<div class="text-center">
+		            <div class="text-center app-name">
+		                <input data-ng-model="name" id="name" type=text placeholder="YourCoolApp" required autofocus/>
+		                <br/>
+		                <div class="text text-success tip">Type the app name and press enter</div>
+		            </div>
+		        </div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+<section data-ng-controller="HomeController" class='home-client-view-linepress'>
+	<section class="content-container" >
+		<div>
+			<div data-ng-hide="authentication && authentication.user">
+				<h1 class="main-heading">
+					<%= appName %>
+				</h1>
+				<a href="/#!/signin" class="link-button">Sign In</a>
+				<a href="/#!/signup" class="link-button">Sign Up</a>
+			</div>
+			<div class="features" data-ng-if="menu.shouldRender(authentication.user);">
+				<div class="row  row-centered" >
+				    <a data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ui-route="{{item.uiRoute}}" class="feature feature-existing col-md-12  col-centered" data-ng-href="/#!/{{item.link}}">
+				        <div class="text-center feature-name">
+				            <h3>{{item.title}}</h3>
+				        </div>
+				    </a>
+				 </div>
+			 </div>
+		</div>
+	</section>
+</section>

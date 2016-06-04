@@ -1,0 +1,7 @@
+<a href="" class="shared-components delete" ng-class="{selected: clickedOnDeleteButton}" ng-click="onDeleteClick($event)">
+	<span ng-class="{loading: loading}" class="deleteBox">
+		<p>Are you sure you want to delete?</p>
+		<span class="cancel" ng-click="onCancel($event)">Cancel</span>
+		<span class="confirm" ng-click="onConfirm($event)">Yes</span>
+	</span>
+</a>

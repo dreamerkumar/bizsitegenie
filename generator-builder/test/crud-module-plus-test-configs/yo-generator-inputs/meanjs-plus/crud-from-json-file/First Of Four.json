@@ -1,0 +1,15 @@
+{
+	"properties": [{"propertyLabel": "Name"}],
+	"childModules": [{		
+		"name": "Second Of Four",
+		"properties" : [{"propertyLabel": "Name"}],
+		"childModules": [{		
+			"name": "Third Of Four",
+			"properties" : [{"propertyLabel": "Name"}],
+			"childModules": [{		
+				"name": "Fourth Of Four",
+				"properties" : [{"propertyLabel": "Name"}]
+			}]
+		}]
+	}]
+}

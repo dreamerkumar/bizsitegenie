@@ -1,0 +1,41 @@
+<div class="page-header">
+    <div class="buttons-and-heading-container">
+        <div class="left-buttons">
+            <a class="btn btn-primary" data-ng-href="/builder#!">
+                <span class="glyphicon glyphicon-home"></span>
+            </a>
+            <a class="btn btn-primary" data-ng-href="/builder#!/apps/{{appId}}/items" ng-if="item">
+                <span class="glyphicon glyphicon-th-list"></span>
+                <span class="high-res-button-text">Items Home</span>
+            </a>
+            <a class="btn btn-primary" data-ng-href="/builder#!{{parentRouteUrl}}/items/{{item._id}}" ng-if="item && !atItemHome">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="high-res-button-text">{{item.name}} Home</span>
+            </a>
+            <a class="btn btn-primary" data-ng-href="/builder#!{{parentRouteUrl}}/{{backLink}}" ng-if="item && atItemHome && isChildItem">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="high-res-button-text">Parent Item</span>
+            </a>
+        </div>
+        <div  class="text-center center-content">
+            <h1>
+                <span data-ng-bind="item.name" ng-if="item"></span><span ng-if="item && itemPageType"> - </span>{{itemPageType}}
+            </h1>
+        </div>
+        <div class="right-buttons">
+            <a class="btn btn-primary" data-ng-href="/builder#!{{parentRouteUrl}}">
+                <span class="glyphicon glyphicon-refresh"></span>
+                <span class="high-res-button-text">Update</span>
+            </a>
+        </div>
+    </div>
+    <ol class="breadcrumb" ng-if="item">
+        <li><a data-ng-href="/builder#!{{parentRouteUrl}}/items">Items</a></li>
+        <li data-ng-repeat="item in parentItemList">
+            <a data-ng-href="/builder#!{{parentRouteUrl}}/items/{{item.id}}">
+                <span data-ng-bind="item.name"></span>
+            </a>
+        </li>            
+        <li class="active" data-ng-bind="item.name"></li>
+    </ol>
+</div>

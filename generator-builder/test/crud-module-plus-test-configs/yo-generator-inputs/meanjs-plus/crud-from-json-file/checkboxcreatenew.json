@@ -1,0 +1,18 @@
+{
+	"createNew": true,
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Check or uncheck this item",
+			"tagName": "input",
+			"attributes": {
+				"type": "checkbox",
+				"value": "Check or uncheck this item"
+			}
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Some other field"
+		}
+	]
+}

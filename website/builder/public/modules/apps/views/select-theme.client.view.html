@@ -1,0 +1,62 @@
+<section data-ng-controller="AppsController" class="apps" data-ng-init="listThemes()" data-ng-show="((authentication.user)">
+    <h1 class="text-center">Choose the most suitable theme for your app by clicking on it?</h1>
+	<div data-ng-show="error" class="text-center text-danger">
+		<strong data-ng-bind="error"></strong>
+	</div>
+    <div class="container theme-thumbnail-container">
+		<div class="row">
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('cerulean');"><div class="image"><img src="builder/public/modules/apps/img/cerulean.png" alt="cerulean"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('cosmo');"><div class="image"><img src="builder/public/modules/apps/img/cosmo.png" alt="cosmo"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('cyborg');"><div class="image"><img src="builder/public/modules/apps/img/cyborg.png" alt="cyborg"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('darkly');"><div class="image"><img src="builder/public/modules/apps/img/darkly.png" alt="darkly"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('flatly');"><div class="image"><img src="builder/public/modules/apps/img/flatly.png" alt="flatly"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('journal');"><div class="image"><img src="builder/public/modules/apps/img/journal.png" alt="journal"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('lumen');"><div class="image"><img src="builder/public/modules/apps/img/lumen.png" alt="lumen"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('paper');"><div class="image"><img src="builder/public/modules/apps/img/paper.png" alt="paper"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('readable');"><div class="image"><img src="builder/public/modules/apps/img/readable.png" alt="readable"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('sandstone');"><div class="image"><img src="builder/public/modules/apps/img/sandstone.png" alt="sandstone"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('simplex');"><div class="image"><img src="builder/public/modules/apps/img/simplex.png" alt="simplex"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('slate');"><div class="image"><img src="builder/public/modules/apps/img/slate.png" alt="slate"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('spacelab');"><div class="image"><img src="builder/public/modules/apps/img/spacelab.png" alt="spacelab"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('superhero');"><div class="image"><img src="builder/public/modules/apps/img/superhero.png" alt="superhero"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('united');"><div class="image"><img src="builder/public/modules/apps/img/united.png" alt="united"></img></div></div>
+			<div class="theme-thumbnail col-lg-4 col-sm-6" data-ng-click="selectTheme('yeti');"><div class="image"><img src="builder/public/modules/apps/img/yeti.png" alt="yeti"></img></div></div>
+		</div>
+	</div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+				    <label class="control-label" for="bootstrapTheme">Bootstrap theme</label>
+				    <div class="controls">
+				        <select type="text" data-ng-model="bootstrapTheme" id="bootstrapTheme" class="form-control" placeholder="Bootstrap theme" required>
+				        	<option value="default" >Default Bootstrap Theme</option>
+				        	<option value="cerulean" >cerulean</option>
+				        	<option value="cosmo" >cosmo</option>
+				        	<option value="cyborg" >cyborg</option>
+				        	<option value="darkly" >darkly</option>
+				        	<option value="flatly" selected="selected">flatly</option>
+				        	<option value="journal" >journal</option>
+				        	<option value="lumen" >lumen</option>
+				        	<option value="paper" >paper</option>
+				        	<option value="readable" >readable</option>
+				        	<option value="sandstone" >sandstone</option>
+				        	<option value="simplex" >simplex</option>
+				        	<option value="slate" >slate</option>
+				        	<option value="spacelab" >spacelab</option>
+				        	<option value="superhero" >superhero</option>
+				        	<option value="united" >united</option>
+				        	<option value="yeti" >yeti</option>
+				        </select>
+				    </div>
+				</div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Select">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

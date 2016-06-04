@@ -1,0 +1,37 @@
+{
+	"properties": [{"propertyLabel": "Name"}],
+	"childModules": [
+		{		
+			"name": "Level Two Child One",
+			"properties" : [{"propertyLabel": "Name"}],
+			"childModules": [{		
+				"name": "Level Three",
+				"properties" : [{"propertyLabel": "Name"}],
+				"childModules": [{		
+					"name": "Level Four",
+					"properties" : [{"propertyLabel": "Name"}]
+				}]
+			}]
+		},
+		{		
+			"name": "Level Two Child Two",
+			"properties" : [{"propertyLabel": "Name"}],
+			"childModules": [{		
+				"name": "Level Three",
+				"properties" : [{"propertyLabel": "Name"}],
+				"childModules": [{		
+					"name": "Level Four Child One",
+					"properties" : [{"propertyLabel": "Name"}]
+				},
+				{
+					"name": "Level Four Child Two",
+					"properties" : [{"propertyLabel": "Name"}]
+				},
+				{
+					"name": "Level Four Child Three",
+					"properties" : [{"propertyLabel": "Name"}]
+				}]
+			}]
+		}
+	]
+}

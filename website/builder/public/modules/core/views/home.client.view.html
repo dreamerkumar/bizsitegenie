@@ -1,0 +1,73 @@
+<section data-ng-controller="HomeController" data-ng-init="onLoadOfHomePage()" >
+	<section data-ng-show="authentication && authentication.user" class="">
+		<section class="apps creation-status text-center" ng-hide="appId">
+			<h1>Configuring web application for use. Please wait...</h1>
+			<div class="row text-center waiting">
+				<img src="builder/public/modules/apps/img/loading.GIF" alt="Configuring Web Application..."></img>
+			</div>
+		</section>
+
+		<section ng-show="appId && userRoles.build">
+			<div class="page-header text-center">
+				<h1>Configure Application</h1>
+			</div>	
+			<div class="row">
+				<div class="text-center col-xs-6">
+					<p>&nbsp;</p>
+					<h2>Application Items</h2>
+					<p>&nbsp;</p>
+					<h4>Update the items of your web application</h4>
+					<div class="row">
+						<p>
+							<a class="btn btn-success btn-lg" href="#!/apps/{{appId}}/items" >
+								<span class="glyphicon glyphicon-th-list"></span>&nbsp;Manage Items
+							</a>
+						</p>
+					</div>
+				</div>
+				<div class="text-center col-xs-6">
+					<p>&nbsp;</p>
+					<h2>Preview</h2>
+					<p>&nbsp;</p>
+					<h4>See how your web application behaves in real time</h4>
+					<div class="row">
+						<p>
+							<a class="btn btn-info btn-lg" href="/">
+								<span class="glyphicon glyphicon-screenshot"></span>&nbsp;Preview Application
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="text-center col-xs-6">
+					<p>&nbsp;</p>
+					<h2>User Permissions</h2>
+					<p>&nbsp;</p>
+					<h4>Manage user permissions by assigning users to groups and roles</h4>
+					<div class="row">
+						<p>
+							<a class="btn btn-success btn-lg" href="#!/user-groups">
+								<span class="glyphicon glyphicon-lock"></span>&nbsp;Manage Permissions
+							</a>
+						</p>
+					</div>
+				</div>
+				<div class="text-center col-xs-6">
+					<p>&nbsp;</p>
+					<h2>Update Application</h2>
+					<p>&nbsp;</p>
+					<h4>Run update to apply the changes to your application items</h4>
+					<div class="row">
+						<p>
+							<a class="btn btn-success btn-lg" href="#!/apps/{{appId}}">
+								<span class="glyphicon glyphicon-refresh"></span>&nbsp;Update Application
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<bsg-user-unauthorized unauthorized="userDoesNotHaveAccessToConfigure"></bsg-user-unauthorized>
+</section>

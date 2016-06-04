@@ -1,0 +1,17 @@
+{
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Enter As Much Text As You Want",
+			"tagName": "textarea",
+			"attributes": {
+				"rows": "2",
+				"cols": "30"
+			}
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Some other field"
+		}
+	]
+}

@@ -1,0 +1,21 @@
+<div class="select-item">
+   <div class="modal-header">
+        <h3 class="modal-title">Select list of properties of '{{item.name}}' for display</h3>
+    </div>
+    <div class="modal-body">
+		<div class="alert alert-info" role="alert">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			<span ng-if="selectedProperties">You have selected the properties: {{selectedProperties}}</span>
+			<span ng-if="!selectedProperties">No properties selected yet</span>
+		</div>
+    	&nbsp;
+        <div class="list-group">
+            <a ng-repeat="item in item.properties" href="#" ng-click="$event.preventDefault(); selectUnselectProperty(item);" class="list-group-item" ng-class="{'selected-item': propertyFlags[item.name] === true, 'gray-out': item.type === 'foreignkeyref' || item.type === 'lookupfromprop'}">
+            	<h4 class="list-group-item-heading"><span class="glyphicon" ng-class="{'glyphicon-check':  propertyFlags[item.name] === true, 'glyphicon-unchecked':  propertyFlags[item.name] !== true}"></span>&nbsp;{{ item.name }}</h4>
+            </a>
+        </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">Choose Selected Properties</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

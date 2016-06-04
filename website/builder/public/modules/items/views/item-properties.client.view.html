@@ -1,0 +1,175 @@
+<section  class="items text-center" data-ng-controller="ItemsController" data-ng-init="findOne()"
+	data-ng-show="((authentication.user) && (authentication.user._id == item.user._id))">
+	<item-header item-page-type="Properties"></item-header>
+	<div class="container-fixed" id='sortable-container'>
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="panel panel-primary available-controls selection-controls">
+					<div class="panel-heading">
+						<h3 class="panel-title">Drag and Drop to the right</h3>
+					</div>
+					<div class="panel-body">
+						<div data-ng-model="availableFormControls" data-as-sortable="sortableOptions">
+							<div data-ng-repeat="formControlType in availableFormControls">
+							    <div class="form-group" data-as-sortable-item ng-show="formControlType === 'textbox'">
+					                <div class="controls" data-as-sortable-item-handle>
+					                    <input type="text" value="Textbox" class="form-control" placeholder="Name" readonly="readonly">
+					                </div>
+					            </div>
+								<div class="form-group" data-as-sortable-item ng-show="formControlType === 'textarea'">
+					                <div class="controls" data-as-sortable-item-handle>
+					                    <textarea rows="5" class="form-control" readonly="readonly">Textarea
+					                    </textarea>
+					                </div>
+					            </div>
+					            <div class="form-group" data-as-sortable-item ng-show="formControlType === 'checkbox'">
+								    <div class="controls" data-as-sortable-item-handle>
+								    	<div class="checkbox">
+										    <label class="control-label" for="Checkbox">
+						                        	<input type="checkbox" name="Checkbox" disabled="disabled">
+						                        	Checkbox
+						                    </label>
+					                    </div>
+					                </div>
+					            </div>
+					            <div class="form-group" data-as-sortable-item ng-show="formControlType === 'dropDown'">
+								    <div class="controls" data-as-sortable-item-handle>
+								        <select class="form-control" ng-mousedown="overrideSelectExpansion($event, this);">
+								        	<option selected disabled>Drop Down</option>
+								        </select>
+								    </div>
+								</div>
+								<div class="form-group" data-as-sortable-item ng-show="formControlType === 'radioButtons'">
+									<div class="controls" data-as-sortable-item-handle>
+									    <div class="radio">
+									    	<label>
+									        	<input type="radio" name="RadioButtons" disabled="disabled">Radio Buttons
+									    	</label>
+										</div>
+									</div>
+								</div>
+							    <div class="form-group" data-as-sortable-item ng-show="formControlType === 'foreignkeyref'">
+					                <div class="controls available-control-foreignkeyref" data-as-sortable-item-handle>
+					                    <span class="glyphicon glyphicon-link"></span>&nbsp;Link to another Item
+					                </div>
+					            </div>								
+							    <div class="form-group" data-as-sortable-item ng-show="formControlType === 'lookupfromprop'">
+					                <div class="controls available-control-lookupfromprop" data-as-sortable-item-handle>
+					                    <span class="glyphicon glyphicon-link"></span>&nbsp;Select and save values from another item property
+					                </div>
+					            </div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-8">
+				<ul data-as-sortable="dragControlListeners" data-ng-model="items" class="selection-controls">
+					<li data-ng-repeat="item in items" data-as-sortable-item>
+						<div ng-switch="item.type" data-as-sortable-item-handle>
+						    <div class="form-group" >
+				                <div class="controls selected-container">
+				                    <div ng-switch-when="textbox">
+				                    	<div control-label></div>
+				                    	<input type="text" value="Textbox" class="form-control selected" placeholder="Name" readonly="readonly">
+				                	</div>
+				                    <div  ng-switch-when="textarea">
+				                    	<div control-label></div>
+				                    	<textarea rows="5" class="form-control selected" readonly="readonly">Textarea
+				                    	</textarea>
+				                    </div>
+							    	<div ng-switch-when="checkbox">
+								    	<div class="checkbox">
+										    <label class="control-label" for="Checkbox">
+						                        	<input type="checkbox" name="Checkbox" disabled="disabled">
+						                        	<div control-label></div>
+						                    </label>
+					                    </div>
+				                    </div>
+							        <div ng-switch-when="dropDown">
+							        	<div control-label></div>
+								        <select class="form-control selected" ng-mousedown="overrideSelectExpansion($event, this);">
+								        	<option selected disabled>Drop Down</option>
+								        </select>
+
+								        <div class="add-options-container">
+									        <div data-ng-repeat="option in item.options">
+									        	<label data-ng-bind="option.text"></label>
+									        </div>
+											<label ng-show="!item.addingOption" class="control-label {{item.optionAdditionStatusClass()}}"
+												ng-click="item.changeToAddOptionMode()">{{item.getOptionDisplayLabel()}}</label>
+											<input ng-show="item.addingOption" type="text" class="form-control
+												enter-control-label" enter-key="item.addOption()"
+												focus="item.addingOption" placeholder="Add the selection value and press enter" ng-model="item.newOptionText">
+										</div>
+							        </div>
+								    <div ng-switch-when="radioButtons">
+								    	<div control-label></div>
+									    <div class="radio">
+									    	<label>
+									        	<input type="radio" name="RadioButtons" disabled="disabled" class="selected">Radio Buttons
+									    	</label>
+										</div>
+								        <div class="add-options-container">
+									        <div data-ng-repeat="option in item.options">
+									        	<label data-ng-bind="option.text"></label>
+									        </div>
+											<label ng-show="!item.addingOption" class="control-label {{item.optionAdditionStatusClass()}}"
+												ng-click="item.changeToAddOptionMode()">{{item.getOptionDisplayLabel()}}</label>
+											<input ng-show="item.addingOption" type="text" class="form-control
+												enter-control-label" enter-key="item.addOption()"
+												focus="item.addingOption" placeholder="Add the selection value and press enter" ng-model="item.newOptionText">
+										</div>
+									</div>
+				                    <div  ng-switch-when="foreignkeyref">
+				                    	<div control-label></div>
+				                    	<p><span class="glyphicon glyphicon-link"></span>&nbsp;Linked to another Item</p>
+				                    </div>
+				                    <div  ng-switch-when="lookupfromprop">
+				                    	<div control-label></div>
+				                    	<p><span class="glyphicon glyphicon-link"></span>&nbsp;Values will be selected from another Item Property</p>
+				                    </div>								
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="drop-container">
+						<p>
+							From the left, choose the best form field for each piece of information. 
+							<br/>
+							Then drag and drop it here.
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+   
+	<div style="height:500px">
+	</div>
+
+	<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/textboxes">
+		Textboxes
+	</a>		<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/textareas">
+		Textareas
+	</a>		<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/selects">
+		Selects
+	</a>		<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/radios">
+		Radios
+	</a>		<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/passwords">
+		Passwords
+	</a>		<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/emails">
+		Emails
+	</a>		<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/checkboxes">
+		Checkboxes
+	</a>
+
+	<div class="pull-right" >
+		<a class="btn btn-primary" href="/builder#!{{parentRouteUrl}}/items/{{item._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+</section>

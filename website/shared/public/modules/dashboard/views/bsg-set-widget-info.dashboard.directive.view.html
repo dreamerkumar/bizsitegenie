@@ -1,0 +1,39 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Set Heading and Description</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="control-label" for="widgetHeading">Heading</label>
+                                <div class="controls">
+                                    <input type="text" data-ng-model="widgetHeading" id="widgetHeading" class="form-control" placeholder="Heading">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="widgetSubHeading">Description</label>
+                                <div class="controls">
+                                    <textarea data-ng-model="widgetSubHeading" id="widgetSubHeading" class="form-control" placeholder="Description" rows="2"></textarea>
+                                </div>
+                            </div>
+                            <div data-ng-show="error" class="text-danger">
+                                <strong data-ng-bind="error"></strong>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>Cancel</a>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>Save</button>
+        </div>
+    </form>
+</div>

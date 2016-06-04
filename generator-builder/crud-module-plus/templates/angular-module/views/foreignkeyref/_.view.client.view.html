@@ -1,0 +1,13 @@
+<h3>
+	<strong><%=propertyLabel %></strong> <small>(References <%=attributes.referenceDescription%>)</small>
+	<a ng-href="/#!/<%=attributes.referencedFeatureName.toLowerCase()%>/{{<%= moduleName %>.<%=camelizedSingularName%>._id}}" target="_blank">
+	<%
+	var referencedDisplayPropertyNamesArray = attributes.propertyNamesForDisplay.split(',');
+	var propertyColumnNamesForDisplayArray = attributes.propertyColumnNamesForDisplay.split(',');
+	for(var ctr = 0; ctr < referencedDisplayPropertyNamesArray.length; ctr++){
+		var referencedDisplayPropertyName = referencedDisplayPropertyNamesArray[ctr];
+		var propertyColumnNameForDisplay = propertyColumnNamesForDisplayArray[ctr];
+	%><%=referencedDisplayPropertyName%>: {{<%= moduleName %>.<%=camelizedSingularName%>.<%=propertyColumnNameForDisplay%>}}&nbsp;
+	<%}%>
+	</a>
+</h3>

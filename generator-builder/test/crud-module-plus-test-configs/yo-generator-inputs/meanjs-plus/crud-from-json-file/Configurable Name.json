@@ -1,0 +1,35 @@
+{
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "First Property Name",
+			"attributes": {
+				"someattribute": "someattributevalue"
+			}
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Second Property Name"
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Third Property Name"
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Fourth Property Name"
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Fifth Property Name"
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Sixth Property Name"
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Seventh Property Name"
+		}
+	]
+}

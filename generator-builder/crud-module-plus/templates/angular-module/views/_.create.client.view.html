@@ -1,0 +1,25 @@
+<section class="create-item" data-ng-controller="<%= classifiedPluralName %>Controller">
+    <section data-ng-show="createAuthorized">
+        <div class="page-header">
+            <h1>New <%= humanizedSingularName %></h1>
+        </div>
+        <div class="col-md-12">
+            <form class="form-horizontal" data-ng-submit="create()" novalidate>
+                <fieldset>
+                    <% properties.forEach(function(prop){ %><%- include('{0}/_.{1}.client.view.html'.format(prop.formFieldType, viewType), prop) %>
+                    <% }) %>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Add">
+                        <a class="btn btn-default" data-ng-href="#!{{parentRouteUrl}}/<%= slugifiedPluralName %>">
+                            Cancel
+                        </a> 
+                    </div>
+    				<div data-ng-show="error" class="text-danger">
+    					<strong data-ng-bind="error"></strong>
+    				</div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <bsg-user-unauthorized unauthorized="createUnauthorized"></bsg-user-unauthorized>
+</section>

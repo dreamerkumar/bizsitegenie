@@ -1,0 +1,68 @@
+.home-background {
+    background: url(/modules/core/img/created_using_snapanapp.co.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.home-client-view-linepress .content-container {
+    box-sizing: border-box;
+    height: 490px;
+    text-align: center;
+    perspective-origin: 631.5px 245px;
+    transform-origin: 631.5px 245px;
+    border: 0 none rgb(102, 102, 102);
+    font: normal normal 300 normal 14px/20px Lato, sans-serif;
+    outline: rgb(102, 102, 102) none 0;
+    padding: 250px 0 60px;
+}/*.content-container*/
+
+.home-client-view-linepress  .main-heading {
+    box-sizing: border-box;
+    height: 44px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;    
+    perspective-origin: 631.5px 22px;
+    transform-origin: 631.5px 22px;
+    border: 0 none rgb(255, 255, 255);
+    font: normal normal bold normal 40px/44px Montserrat, sans-serif;
+    margin: 0 0 20px;
+    outline: rgb(255, 255, 255) none 0;
+}/*.main-heading*/
+
+.home-client-view-linepress .description {
+    box-sizing: border-box;
+    height: 32px;
+    text-align: center;
+    perspective-origin: 631.5px 16px;
+    transform-origin: 631.5px 16px;
+    border: 0 none rgb(238, 238, 238);
+    font: normal normal 300 normal 20px/32px Lato, sans-serif;
+    margin: 0 0 50px;
+    outline: rgb(238, 238, 238) none 0;
+}/*.description*/
+
+.home-client-view-linepress  .link-button {
+    background-position: 0 0;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    height: 34px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;    
+    perspective-origin: 61.546875px 17px;
+    transform-origin: 61.546875px 17px;
+    background: rgb(235, 93, 30) none repeat scroll 0 0 / auto padding-box border-box;
+    border: 1px solid rgb(235, 93, 30);
+    font: normal normal normal normal 14px/20px Montserrat, sans-serif;
+    outline: rgb(255, 255, 255) none 0;
+    padding: 6px 12px;
+    transition: all 0.3s ease-in-out 0s;
+}/*.A_5*/
+

@@ -1,0 +1,23 @@
+<section class="items review-details text-center" data-ng-controller="ItemUploadSpreadsheetController" data-ng-show="((authentication.user) && (authentication.user._id == item.user._id))">
+	<item-header item-page-type="Upload Spreadsheet"></item-header>
+	<div >
+		<div class="jumbotron text-center">
+			<p>
+				Create the properties and data for this item from an existing spreadsheet.<br/><br/>
+			</p>
+			<bsg-file-upload on-successful-upload="onSuccessfulUploadOfSpreadsheet" module-name="{{item.name}}"></bsg-file-upload>
+		</div>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item text-left" ng-repeat="spreadsheet in currentlyUploadedSpreadsheets" >
+			<span class="badge">{{spreadsheet.status}}</span>
+			<h4>{{spreadsheet.fileName}}</h4>
+			<small class="list-group-item-text">
+				Uploaded
+				<span data-ng-bind="spreadsheet.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="spreadsheet.user.displayName"></span>
+			</small>
+		</li>
+	</ul>
+</section>

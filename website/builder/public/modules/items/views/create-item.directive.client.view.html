@@ -1,0 +1,9 @@
+<div class="item item-add-new col-md-12 col-centered">
+    <div class="text-center item-name">
+        <h2>A collection of</h2>
+        <input type=text placeholder="stuff" enter-key="createNewItem();" ng-model="newItemName"/>
+    </div>
+    <div data-ng-show="createNewItemError" class="text-danger">
+        <div data-ng-bind="createNewItemError"></div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.bsg-select-multiple-by-name-directive .list-filter {
+	margin-bottom: 5px;
+}
+
+.bsg-select-multiple-by-name-directive .list-filter input {
+	height: auto;
+	padding: 3px 5px 3px 5px;
+}
+
+.bsg-select-multiple-by-name-directive input[type=checkbox]
+{
+	/* Double-sized Checkboxes */
+	 /* -ms-transform: scale(2);IE */
+	 /* F-moz-transform: scale(2);F */
+	/*-webkit-transform: scale(2);  Safari and Chrome */
+	/*-o-transform: scale(2);  Opera */
+	/*padding: 10px;*/
+}
+
+.bsg-select-multiple-by-name-directive .checkboxtext
+{
+	/* Checkbox text */
+/*	font-size: 110%;*/
+	display: inline;
+	margin-left: 15px;
+}

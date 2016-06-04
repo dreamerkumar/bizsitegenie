@@ -1,0 +1,12 @@
+{
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "First field"
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Second field"
+		}
+	]
+}

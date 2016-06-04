@@ -1,0 +1,118 @@
+<section data-ng-controller="PropertyController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Property</h1>
+
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="referenceDisplayFormat">Reference display format</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.referenceDisplayFormat" id="referenceDisplayFormat" class="form-control" placeholder="Reference display format" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="col">Col</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.col" id="col" class="form-control" placeholder="Col" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="selectorControlType">Selector control type</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.selectorControlType" id="selectorControlType" class="form-control" placeholder="Selector control type" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="parentId">Parent id</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.parentId" id="parentId" class="form-control" placeholder="Parent id" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="row">Row</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.row" id="row" class="form-control" placeholder="Row" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="option">Option</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.option" id="option" class="form-control" placeholder="Option" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="refDescription">Ref description</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.refDescription" id="refDescription" class="form-control" placeholder="Ref description" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="referencedPropertyName">Referenced property name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.referencedPropertyName" id="referencedPropertyName" class="form-control" placeholder="Referenced property name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="selectorControlAttribute">Selector control attribute</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.selectorControlAttribute" id="selectorControlAttribute" class="form-control" placeholder="Selector control attribute" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="type">Type</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.type" id="type" class="form-control" placeholder="Type" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.name" id="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="value">Value</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.value" id="value" class="form-control" placeholder="Value" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="referencedFeatureId">Referenced item id</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.referencedFeatureId" id="referencedFeatureId" class="form-control" placeholder="Referenced item id" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="referencedFeatureName">Referenced item name</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.referencedFeatureName" id="referencedFeatureName" class="form-control" placeholder="Referenced item name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="propertyNamesForDisplay">Property names for display</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.propertyNamesForDisplay" id="propertyNamesForDisplay" class="form-control" placeholder="Property names for display" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="referenceDescription">Reference description</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="property.referenceDescription" id="referenceDescription" class="form-control" placeholder="Reference description" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-primary">
+                    <a class="btn btn-default" data-ng-href="#!{{parentRouteUrl}}/property/{{property._id}}">
+                        Cancel
+                    </a>            
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

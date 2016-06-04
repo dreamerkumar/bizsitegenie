@@ -1,0 +1,8 @@
+<div class="form-group">
+                    <label class="control-label" for="<%=camelizedSingularName%>"><%=humanizedSingularName%></label>
+                    <div class="controls">
+                        <select <% for(var att in attributes){if(attributes.hasOwnProperty(att)){ %><%=att%>="<%=attributes[att]%>" <% }} %>data-ng-model="<%= moduleName %>.<%=camelizedSingularName%>" id="<%=camelizedSingularName%>" class="form-control" placeholder="<%=humanizedSingularName%>" required><% selectTagOptions.forEach(function(opt){ %>
+                        	<option <% for(var optAtt in opt.attributes){if(opt.attributes.hasOwnProperty(optAtt)){ %><%=optAtt%>="<%=opt.attributes[optAtt]%>" <% } } %>><%=opt.text%></option><% }) %>
+                        </select>
+                    </div>
+                </div>

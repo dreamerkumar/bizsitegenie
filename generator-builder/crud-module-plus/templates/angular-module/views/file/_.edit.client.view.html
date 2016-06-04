@@ -1,0 +1,7 @@
+<div class="form-group">
+                    <label class="control-label" for="<%=camelizedSingularName%>"><%=humanizedSingularName%></label>
+                    <div class="controls">
+                    	<bsg-file-download file-key="{{<%= moduleName %>.<%=camelizedSingularName%>_fileKey}}" file-name="{{<%= moduleName %>.<%=camelizedSingularName%>}}"></bsg-file-download>
+                        <bsg-file-upload  on-successful-upload="onSuccessfulUploadInEditMode" module-name="<%= moduleName %>" property-name="<%=camelizedSingularName%>"></bsg-file-upload>
+                    </div>
+                </div>

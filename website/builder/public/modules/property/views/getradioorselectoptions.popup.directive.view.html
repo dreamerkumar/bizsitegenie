@@ -1,0 +1,22 @@
+<div >
+	<div class="getradioorselectoptions-content">
+		<div class="form-group">
+			<h3 class="text-success">Add Options</h3>
+			<textarea class="form-control" rows="3" id="newOptions" ng-model="newOptions" placeholder="Add comma separated values and click on Add button"></textarea>
+			<span class="text-danger">{{addOptionsError}}</span>
+			<button ng-click="addOptions()" class="btn btn-default pull-right add-option" ng-disabled="!newOptions">Add Options</button>
+		</div>
+		<h3 class="text-success heading-saved-options">Saved Options</h3>
+		<ul class="list-group">
+			<li ng-repeat="option in options" class="list-group-item">
+				<div>{{option}}</div>
+				<div class="pull-right delete-option">
+					<shared-components-delete delete-item="option" on-delete-handler="remove(option)"></shared-components-delete>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="modal-footer">
+        <button class="btn btn-warning" type="button" ng-click="close()">Close</button>
+    </div>
+</div>

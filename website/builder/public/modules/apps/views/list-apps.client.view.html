@@ -1,0 +1,51 @@
+<section data-ng-controller="AppsController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/builder#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="pull-right btn btn-primary" href="/builder#!{{parentRouteUrl}}/apps/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <h1>Apps</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="app in apps" data-ng-href="/builder#!{{parentRouteUrl}}/apps/{{app._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created
+				<span data-ng-bind="app.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="app.user.displayName"></span>
+			</small>
+            <h4 class="list-group-item-heading">
+	<strong>Name</strong>
+	<span data-ng-bind="app.name"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>App Description</strong>
+	<span data-ng-bind="app.appDescription"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>App Keywords</strong>
+	<span data-ng-bind="app.appKeyword"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>App Author</strong>
+	<span data-ng-bind="app.appAuthor"></span>
+</h4>
+            <h4 class="list-group-item-heading">
+	<strong>Bootstrap Theme</strong>
+	<span data-ng-bind="app.bootstrapTheme"></span>
+</h4>
+            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!apps.$resolved || apps.length">
+    	No Apps yet, why don't you <a href="/builder#!{{parentRouteUrl}}/apps/create">create one</a>?
+    </div> 
+</section>

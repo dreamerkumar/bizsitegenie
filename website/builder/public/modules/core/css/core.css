@@ -1,0 +1,75 @@
+body {
+	color: #555;
+	font-family: 'Open Sans', sans-serif;
+}
+
+strong {
+    opacity: .8;
+}
+
+.view-item strong {
+	background: #EFE6E6;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.content {
+	margin-top: 50px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+hr {
+	width: 100%; 
+	color: #93c54b; 
+	height: 1px; 
+	background-color:#93c54b;
+}
+
+.page-header {
+	border-bottom-color: #81b33a;
+}
+
+@media (max-width: 1200px) {
+	.high-res-button-text {
+		display:none;
+	}
+}
+
+@media (max-width: 800px) {
+	.right-buttons {
+		display:none;
+	}
+}
+
+.buttons-and-heading-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+
+.buttons-and-heading-container .left-buttons{
+	
+}
+
+.buttons-and-heading-container .center-content{
+	flex-grow:1;
+}
+
+.buttons-and-heading-container .right-buttons{
+	
+}
+
+.buttons-and-heading-container .center-content h1{
+	margin-top:5px;
+}

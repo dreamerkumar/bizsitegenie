@@ -1,0 +1,28 @@
+<section class="items text-center" data-ng-controller="ListChildItemsController" data-ng-show="((authentication.user) && (authentication.user._id == item.user._id))">
+    <item-header item-page-type="Child Items"></item-header>
+    <div class="container">
+        <div class="row text-center">
+            <div class="btn-group view-toggle-buttons" ng-init="visualView=true">
+                <a class="btn" ng-class="{'btn-success': visualView, 'btn-default': !visualView}" ng-click="visualView=true">
+                    Visual View
+                </a>
+                <a class="btn" ng-class="{'btn-success': !visualView, 'btn-default': visualView}"ng-click="visualView=false">
+                    List View
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center" ng-if="visualView">
+        <div class="text-center col-xs-12 item-tree-view configure">
+            <h4>
+                <span class="node-click-help-text">Click on the nodes to expand or collapse.</span><br/>
+                <span class="node-text-click-help-text">Click on the Item Name to go to it's detail page.</span>
+            </h4>
+            <item-list-visual item-selection-handler="navigateToItem(item)" allow-add="true" start-at-node-id="{{item._id}}"></item-list-visual>
+        </div>
+    </div>
+    
+    <div ng-if="!visualView">
+        <list-child-items></list-child-items>
+    </div>
+</section>

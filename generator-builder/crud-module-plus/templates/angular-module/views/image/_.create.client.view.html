@@ -1,0 +1,7 @@
+<div class="form-group">
+				    <label class="control-label" for="<%=camelizedSingularName%>"><%=humanizedSingularName%></label>
+				    <div class="controls">
+				        <bsg-image-viewer file-key="{{<%=camelizedSingularName%>_fileKey}}" file-name="{{<%=camelizedSingularName%>}}" width="350"></bsg-image-viewer>
+                        <bsg-file-upload  on-successful-upload="onSuccessfulUploadInCreateMode" property-name="<%=camelizedSingularName%>"></bsg-file-upload>
+				    </div>
+				</div>

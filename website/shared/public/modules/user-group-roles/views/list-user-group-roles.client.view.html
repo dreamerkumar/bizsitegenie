@@ -1,0 +1,37 @@
+<section data-ng-controller="UserGroupRolesController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+        </div>
+        <h1>User group roles</h1>
+    </div>
+    <div class="list-group">
+        <fieldset  data-ng-show="userGroupRoles.$resolved && userGroupRoles.length && userGroupRoles.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <a data-ng-repeat="userGroupRole in userGroupRoles | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/user-group-roles/{{userGroupRole._id}}" class="list-group-item">
+         <small class="list-group-item-text">
+            Created
+            <span data-ng-bind="userGroupRole.created | date:'medium'"></span>
+            by
+            <span data-ng-bind="userGroupRole.user.displayName"></span>
+        </small>
+        <h4 class="list-group-item-heading">
+           <strong>Role</strong>
+           <span data-ng-bind="userGroupRole.roleId.name"></span>
+       </h4>
+
+   </a>
+</div>
+<div class="alert alert-warning text-center" data-ng-hide="!userGroupRoles.$resolved || userGroupRoles.length">
+   No roles have been assigned to this user group.
+</div> 
+</section>

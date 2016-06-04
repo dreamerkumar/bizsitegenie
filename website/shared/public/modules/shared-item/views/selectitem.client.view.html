@@ -1,0 +1,60 @@
+<div class="select-item" ng-init="getItemListAtAllLevels();">
+   <div class="modal-header">
+        <h3 class="modal-title">Select Item</h3>
+    </div>
+    <div class="modal-body">
+		<div class="alert alert-info item-selection-status" role="alert" ng-class="highlightSelectedItemClass">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+			<span ng-if="!selected.item">No item selected yet</span>
+			<span ng-if="selected.item">You have selected the item: {{selected.item.name}}</span>
+		</div>
+        <div class="row text-center">
+            <div class="btn-group view-toggle-buttons" ng-init="visualView=true">
+                <a class="btn" ng-class="{'btn-success': visualView, 'btn-default': !visualView}" ng-click="visualView=true">
+                    Visual View
+                </a>
+                <a class="btn" ng-class="{'btn-success': !visualView, 'btn-default': visualView}"ng-click="visualView=false">
+                    List View
+                </a>
+            </div>
+        </div>
+	    <div class="row text-center" ng-if="visualView" >
+	        <div class="text-center col-xs-12 item-tree-view select">
+	            <h4>
+	                <span class="node-click-help-text">Click on the nodes to expand or collapse.</span><br/>
+	                <span class="node-text-click-help-text">Click on the Item Name to select it.</span>
+	            </h4>
+	            <item-list-visual item-selection-handler="setSelectedItem(item)" item-id-to-gray-out="{{selectForItemId}}"></item-list-visual>
+	        </div>
+	    </div>
+    	<div class="row text-center" ng-if="!visualView">
+    		<div class="text-center col-xs-12 item-list-view select">
+	            <h4>
+	                <span class="node-text-click-help-text">Click on the Item Name to select it.</span>
+	            </h4>
+			    <fieldset  data-ng-show="itemListToDisplay && itemListToDisplay.length && itemListToDisplay.length > 1">
+		            <div class="form-group">
+		                <div class="controls">
+		                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+		                </div>
+		            </div>
+		        </fieldset>
+				<div>
+				    <div class="list-group text-left">
+			            <a ng-repeat="item in itemListToDisplay | filter:{name: filterText}" href="#" ng-click="$event.preventDefault(); setSelectedItemFromList(item);" class="list-group-item" ng-class="{'selected-item': item._id === selected.item._id, 'gray-out': item._id === selectForItemId || !item.properties || !item.properties.length}">
+			            	<h4 class="list-group-item-heading">{{ item.name }}</h4>
+			            	<span class="badge">Level {{item.level}}</span>
+			            	<small ng-if="item.parentPath">{{item.parentPath}}-></small>
+			            	<small ng-if="!item.parentPath">&nbsp;</small>
+			            </a>
+				    </div>
+				</div>
+			</div>
+    	</div>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">Choose Selected Item</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

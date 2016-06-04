@@ -1,0 +1,28 @@
+{
+  "author": "AngularUI Team",
+  "name": "angular-ui-utils",
+  "description": "AngularUI Utilities - Companion Suite for AngularJS",
+  "homepage": "http://angular-ui.github.com",
+  "main": "./index.js",
+  "license": "MIT",
+  "dependencies": {
+    "angular-ui-scroll": "latest",
+    "angular-ui-scrollpoint": "latest",
+    "angular-ui-event": "latest",
+    "angular-ui-mask": "latest",
+    "angular-ui-validate": "latest",
+    "angular-ui-indeterminate": "latest",
+    "angular-ui-uploader": "latest"
+  },
+  "version": "3.0.0",
+  "_release": "3.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.0",
+    "commit": "0debc182ae81694d96afde5ab1b4af06f9446237"
+  },
+  "_source": "git://github.com/angular-ui/ui-utils.git",
+  "_target": "~3.0.0",
+  "_originalSource": "angular-ui-utils",
+  "_direct": true
+}

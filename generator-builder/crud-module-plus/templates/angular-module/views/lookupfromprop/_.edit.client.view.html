@@ -1,0 +1,10 @@
+<div class="form-group">
+                    <label class="control-label" for="<%=camelizedSingularName%>"><%=humanizedSingularName%></label>  <small>(References <%=attributes.refDescription%>)</small>
+					<h4 class="foreignkeyref-current-selection">
+                        <strong>Current Selection</strong>
+                        <span data-ng-bind="<%= moduleName %>.<%=camelizedSingularName%>" class="ng-binding"></span>
+                    </h4>
+                    <div class="controls">
+				        <lookup-from-property search-service="<%=attributes.referencedFeatureName%>" match-property-name="<%=attributes.referencedPropertyColumnName%>" binding-model="<%= moduleName %>.<%=camelizedSingularName%>"></lookup-from-property>
+                    </div>
+                </div>

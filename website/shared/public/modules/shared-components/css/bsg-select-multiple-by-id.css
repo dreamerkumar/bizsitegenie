@@ -1,0 +1,13 @@
+.bsg-select-multiple-by-id-directive .list-filter {
+	margin-bottom: 5px;
+}
+
+.bsg-select-multiple-by-id-directive .list-filter input {
+	height: auto;
+	padding: 3px 5px 3px 5px;
+}
+
+
+.bsg-select-multiple-by-id-directive .display-property {
+	margin-left: 10px;
+}

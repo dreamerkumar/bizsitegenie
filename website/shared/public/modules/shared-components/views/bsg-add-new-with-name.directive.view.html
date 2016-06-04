@@ -1,0 +1,14 @@
+<div class="bsg-add-new-with-name-directive">
+	<form class="form-inline">
+		<div class="form-group">
+			<label for="addNew">Add New</label>
+			<input type="text" class="form-control input-sm" id="addNew" placeholder="Enter name" enter-key="createNew()" ng-model="newName" ng-change="clearError()">
+		</div>
+		<button type="submit" class="btn btn-sm btn-success" ng-click="createNew()">
+			<i class="glyphicon glyphicon-plus"></i>&nbsp;Add
+		</button>
+	</form>
+	<div data-ng-show="createNewError" class="text-danger">
+	    <div data-ng-bind="createNewError"></div>
+	</div>
+</div>

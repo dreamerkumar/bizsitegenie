@@ -1,0 +1,23 @@
+.getradioorselectoptions-content{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.getradioorselectoptions-content .btn.add-option {
+	margin-top: 5px;
+}
+
+.getradioorselectoptions-content .heading-saved-options {
+	margin-top: 60px;
+}
+
+.getradioorselectoptions-content .delete-option a {
+	margin: -27px 150% 0;
+	opacity: .5
+}
+
+.getradioorselectoptions-content .delete-option a.selected {
+	opacity: 1;
+}

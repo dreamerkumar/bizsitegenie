@@ -1,0 +1,42 @@
+<section data-ng-controller="RolesController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="pull-right btn btn-primary" href="/#!{{parentRouteUrl}}/roles/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <h1>Roles</h1>
+    </div>
+    <div class="list-group">
+        <fieldset  data-ng-show="roles.$resolved && roles.length && roles.length > 1">
+            <div class="form-group">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <a data-ng-repeat="role in roles | filter:filterText" data-ng-href="#!{{parentRouteUrl}}/roles/{{role._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created
+				<span data-ng-bind="role.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="role.user.displayName"></span>
+			</small>
+            <h4 class="list-group-item-heading">
+	<strong>Name</strong>
+	<span data-ng-bind="role.name"></span>
+</h4>
+            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!roles.$resolved || roles.length">
+    	No Roles yet, why don't you <a href="/#!{{parentRouteUrl}}/roles/create">create one</a>?
+    </div> 
+</section>

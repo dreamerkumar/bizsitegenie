@@ -1,0 +1,11 @@
+<div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-search"></i>
+	<input type="text" ng-model="userEntry" typeahead-template-url="searchResults1.html"
+       vk-typeahead="'' for value in search($viewValue)" typeahead-wait-ms="500" match-property-names="{{matchPropertyNames}}"
+       typeahead-on-select="typeaheadOnSelect($item, $model, $label)" class="foreignkeyref-search-box" placeholder="Please enter some characters here to search and select a new value">
+</div>
+<script type="text/ng-template" id="searchResults1.html">
+    <div>
+		{{match.model._select_foreign_key_ref_display}}
+    </div>
+</script>

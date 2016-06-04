@@ -1,0 +1,130 @@
+.thumbnail-selector {
+	
+	margin: 40px auto;
+}
+
+.thumbnail-selector div.gallery {
+	margin-top: 30px;
+}
+
+.thumbnail-selector div.gallery ul {
+	list-style-type: none;
+	margin-left: 35px;
+}
+
+/* animation */
+.thumbnail-selector div.gallery ul li, .thumbnail-selector div.gallery li img {
+	-webkit-transition: all 0.1s ease-in-out;
+  	-moz-transition: all 0.1s ease-in-out;
+  	-o-transition: all 0.1s ease-in-out;
+  	transition: all 0.1s ease-in-out;
+}
+
+.thumbnail-selector div.gallery ul li {
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin: 5px;
+	padding: 5px;
+	z-index: 0;
+}
+
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+.thumbnail-selector div.gallery ul li:hover {
+	z-index: 6;
+} 
+
+.thumbnail-selector div.gallery ul li.selected {
+	z-index: 5;
+}
+
+.thumbnail-selector div.gallery ul li.selected img{
+	border: 1px solid #325d88;
+}
+
+/* Image is position nicely under li */
+.thumbnail-selector div.gallery ul li img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #dddddd;
+	padding: 5px;
+	width: 200px;
+	height: 200px;
+	background: #f0f0f0;
+	cursor: pointer;
+}
+
+.thumbnail-selector div.gallery ul li img:hover, .thumbnail-selector div.gallery ul li.selected img {
+	width: 300px;
+	height: 300px;
+	margin-top: -200px;
+	margin-left: -200px;
+	top: 65%;
+	left: 65%;
+}
+
+.thumbnail-selector p.attribution {
+	font-family: 'Consolas';
+	color: #000;
+	clear: both;
+	text-align: center;
+	line-height: 25px;
+	padding-top: 30px;
+}
+
+.thumbnail-selector p.attribution a {
+	color: #4c8d7c;
+}
+
+.thumbnail-selector .clear-floats {
+	clear:both;
+}
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+	.thumbnail-selector {
+		width: 500px;
+	}
+
+	.thumbnail-selector div.gallery ul li {
+		width: 130px;
+		height: 130px;
+	}
+	.thumbnail-selector div.gallery ul li img {
+		width: 130px;
+		height: 130px;
+	}
+	.thumbnail-selector div.gallery ul li img:hover, .thumbnail-selector div.gallery ul li.selected img {
+		width:  200px;
+		height: 200px;
+		margin-top: -130px;
+		margin-left: -130px;
+	}
+}
+
+@media only screen and (max-width: 498px) {
+	.thumbnail-selector {
+		width: 300px;
+		
+	}
+	.thumbnail-selector div.gallery ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	.thumbnail-selector div.gallery ul li {
+		width: 130px;
+		height: 130px;
+	}
+	.thumbnail-selector div.gallery ul li img {
+		width: 130px;
+		height: 130px;
+	}
+	.thumbnail-selector div.gallery ul li img:hover, .thumbnail-selector div.gallery ul li.selected img {
+		width: 200px;
+		height: 200px;
+		margin-top: -130px;
+		margin-left: -130px;
+	}
+}

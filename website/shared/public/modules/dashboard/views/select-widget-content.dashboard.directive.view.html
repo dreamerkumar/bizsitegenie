@@ -1,0 +1,17 @@
+<div>
+    <form name="_form" class="form-horizontal" ng-submit="submit(_form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="dismiss()" aria-hidden="true">&times;</button>
+            <h3>Select Widget Content</h3>
+        </div>
+
+        <div class="modal-body">
+            <thumbnail-selector available-thumbnails="availableWidgetContentTypes" selected-thumbnail="widgetContentType"></thumbnail-selector>
+        </div>
+
+        <div class="modal-footer">
+            <a ng-click="dismiss()" class="btn btn-default" tabindex="-1"><i class="glyphicon glyphicon-remove"></i>Cancel</a>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i>Select</button>
+        </div>
+    </form>
+</div>

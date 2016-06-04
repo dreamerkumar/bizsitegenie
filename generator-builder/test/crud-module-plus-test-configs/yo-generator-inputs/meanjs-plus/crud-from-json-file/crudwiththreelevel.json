@@ -1,0 +1,20 @@
+{
+	"properties": [{		
+			"propertyLabel": "Favorite Pet"
+		},
+		{
+			"propertyLabel": "Vagabound",
+			"tagName": "input",
+			"attributes": [{"type": "checkbox"}, {"value": "Vagabound"}]
+		}
+	],
+
+	"childModules": [{		
+		"name": "Son",
+		"properties" : [{"propertyLabel": "Son First Name"},{"propertyLabel": "Son Last Name"}],
+		"childModules": [{		
+			"name": "Grandson",
+			"properties" : [{"propertyLabel": "Grandson First Name"},{"propertyLabel": "Grandson Last Name"}]
+		}]
+	}]
+}

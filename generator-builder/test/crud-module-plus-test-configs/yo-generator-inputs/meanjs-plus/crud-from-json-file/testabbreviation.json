@@ -1,0 +1,9 @@
+{
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "ADT"
+
+		}
+	]
+}

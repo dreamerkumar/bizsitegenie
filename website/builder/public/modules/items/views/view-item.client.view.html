@@ -1,0 +1,30 @@
+<section data-ng-controller="ItemsController">
+	<section data-ng-show="hasAccess" class="items text-center" >
+		<item-header></item-header>
+		<div>
+			<div class="row  row-centered">
+		        <a data-ng-href="/builder#!{{parentRouteUrl}}/item-property/{{item._id}}" class="item item-existing col-md-12  col-centered">
+		            <div class="text-center item-name">
+		                <h3 class="manage-item-option"><span class="glyphicon glyphicon glyphicon-edit"></span>&nbsp;Properties</h3>
+		            </div>
+		        </a>
+		        <a data-ng-href="/builder#!{{parentRouteUrl}}/item-collections/{{item._id}}" class="item item-existing col-md-12  col-centered">
+		            <div class="text-center item-name">
+		                <h3 class="manage-item-option"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Child Items</h3>
+		            </div>
+		        </a>
+		        <a data-ng-href="/builder#!{{parentRouteUrl}}/item-upload-spreadsheet/{{item._id}}" class="item item-existing col-md-12  col-centered">
+		            <div class="text-center item-name">
+		                <h3 class="manage-item-option"><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload Spreadsheet</h3>
+		            </div>
+		        </a>
+		        <a data-ng-href="/builder#!{{parentRouteUrl}}/item-permissions/{{item._id}}" class="item item-existing col-md-12  col-centered">
+		            <div class="text-center item-name">
+		                <h3 class="manage-item-option"><span class="glyphicon glyphicon-lock"></span>&nbsp;Permissions</h3>
+		            </div>
+		        </a>
+		     </div>
+		</div>
+	</section>
+	<bsg-user-unauthorized unauthorized="unauthorized"></bsg-user-unauthorized>
+</section>

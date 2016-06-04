@@ -1,0 +1,26 @@
+<div class="bsg-select-multiple-by-name-directive">
+    <div class="container">
+        <div class="row">
+            <h3 class="pull-left text-success">{{title}}</h3>
+        </div>
+    </div>
+    <div data-ng-show="selectMultipleByNameError" class="text-danger">
+        <div data-ng-bind="selectMultipleByNameError"></div>
+    </div>
+    <bsg-add-new-with-name on-successful-add="addToList" service-name="{{serviceName}}"></bsg-add-new-with-name>
+    <ul class="list-group">
+        <fieldset  data-ng-show="list.$resolved && list.length && list.length > 1">
+            <div class="form-group list-filter">
+                <div class="controls">
+                    <input type="text" data-ng-model="filterText" id="filterText" class="form-control" placeholder="Filter">
+                </div>
+            </div>
+        </fieldset>
+        <li data-ng-repeat="listItem in list | filter:filterText" class="list-group-item">
+           <input  type="checkbox" ng-model="checkedState[listItem.name]" ng-change="onChangeCheckStatus(listItem.name)"/>
+            <span class="checkboxtext">
+              {{listItem.name}}
+            </span>
+        </li>
+    </ul>
+</div>

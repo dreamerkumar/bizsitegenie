@@ -1,0 +1,26 @@
+<div class="builder-add-properties-box-outer">
+  <div class="builder-add-properties-box">
+    <div class="builder-add-properties-box-container" ng-class="{'expand': expand}">
+      <span class="button" ng-click="toggleAddPropertiesExpander()" ng-class="{'expand': expand}">+</span>
+      <div class="content" ng-class="{'expand': expand}">
+        <div class="head">        
+        <h1>Add Properties</h1>
+          <p class="sub">Add a comma separated list of one or more property names</p>
+        </div>
+        <div class="builder-add-properties-box-container-body">
+          <div class="form-group">
+            <textarea class="form-control" row="20" cols="100" ng-model="propertyNames"></textarea>
+          </div>
+          <div class="pull-left text-danger">
+            {{error}}
+          </div>
+          <div class="pull-right">
+            <a class="btn btn-primary" ng-click="addMultipleProperties()">Add Properties</a>
+            <a class="btn btn-default" ng-click="toggleAddPropertiesExpander()">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="builder-add-properties-box-space-keeper"></div>
+</div>

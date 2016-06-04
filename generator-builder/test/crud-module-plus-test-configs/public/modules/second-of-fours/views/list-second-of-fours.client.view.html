@@ -1,0 +1,35 @@
+<section data-ng-controller="SecondOfFoursController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="pull-right btn btn-primary" href="/#!{{parentRouteUrl}}/second-of-fours/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <h1>Second of fours</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="secondOfFour in secondOfFours" data-ng-href="#!{{parentRouteUrl}}/second-of-fours/{{secondOfFour._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created
+				<span data-ng-bind="secondOfFour.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="secondOfFour.user.displayName"></span>
+			</small>
+            <h4 class="list-group-item-heading">
+	<strong>Name</strong>
+	<span data-ng-bind="secondOfFour.name"></span>
+</h4>
+            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!secondOfFours.$resolved || secondOfFours.length">
+    	No Second of fours yet, why don't you <a href="/#!{{parentRouteUrl}}/second-of-fours/create">create one</a>?
+    </div> 
+</section>

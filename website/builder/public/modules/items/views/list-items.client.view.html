@@ -1,0 +1,30 @@
+<section class="items item-list text-center" data-ng-controller="ListItemsController">
+    <item-header item-page-type="Items"></item-header>
+    <div class="view-toggle-buttons-help">You can view the item list as an expandable tree or as a list.<br/>Choose between the below two options to view and manage the items of this application</div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="btn-group view-toggle-buttons" ng-init="visualView=true">
+                <a class="btn" ng-class="{'btn-success': visualView, 'btn-default': !visualView}" ng-click="visualView=true">
+                    Visual View
+                </a>
+                <a class="btn" ng-class="{'btn-success': !visualView, 'btn-default': visualView}"ng-click="visualView=false">
+                    List View
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center" ng-if="visualView">
+        <div class="text-center col-xs-12 item-tree-view configure">
+            <h4>
+                Below is a visual representation of items you have currently built.<br/>
+                <span class="node-click-help-text">Click on the nodes to expand or collapse.</span><br/>
+                <span class="node-text-click-help-text">Click on the Item Name to go to it's detail page.</span>
+            </h4>
+            <item-list-visual item-selection-handler="navigateToItem(item)" allow-add="true"></item-list-visual>
+        </div>
+    </div>
+    
+    <div ng-if="!visualView">
+       <list-root-items></list-root-items>
+    </div>
+</section>  

@@ -1,0 +1,27 @@
+<section data-ng-controller="UserGroupRolesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/user-group-roles">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<h1>User group role Details</h1>
+		<h3>
+			<strong>Role</strong>
+			<span data-ng-bind="userGroupRole.roleId.name"></span>
+		</h3>
+
+
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == userGroupRole.user._id))">
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Created
+			<span data-ng-bind="userGroupRole.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="userGroupRole.user.displayName"></span>
+		</em>
+	</small>
+</section>

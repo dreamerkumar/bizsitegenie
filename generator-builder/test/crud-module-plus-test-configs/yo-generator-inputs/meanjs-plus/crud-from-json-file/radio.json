@@ -1,0 +1,36 @@
+{
+	"properties": [
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Select one of the options",
+			"tagName": "input",
+			"attributes": {
+				"type": "radio"
+			},
+			"inputTagRadioTypeOptions": [
+				{
+					"text": "Option 1",
+					"attributes": {
+						"value": "Option 1"
+					}
+				},
+				{
+					"text": "Option 2",
+					"attributes": {
+						"value": "Option 2"
+					}
+				},
+				{
+					"text": "Option 3",
+					"attributes": {
+						"value": "Option 3"
+					}
+				}
+			]
+		},
+		{
+			//name of the property (can be string with spaces)
+			"propertyLabel": "Some other field"
+		}
+	]
+}

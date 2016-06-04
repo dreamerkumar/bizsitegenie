@@ -1,0 +1,90 @@
+<section data-ng-controller="PropertyController" data-ng-init="findOne()">
+	<div class="page-header">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/property">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<h1>Property Details</h1>
+		<h3>
+	<strong>Reference Display Format</strong>
+	<span data-ng-bind="property.referenceDisplayFormat"></span>
+</h3>
+        <h3>
+	<strong>Col</strong>
+	<span data-ng-bind="property.col"></span>
+</h3>
+        <h3>
+	<strong>Selector Control Type</strong>
+	<span data-ng-bind="property.selectorControlType"></span>
+</h3>
+        <h3>
+	<strong>Parent Id</strong>
+	<span data-ng-bind="property.parentId"></span>
+</h3>
+        <h3>
+	<strong>Row</strong>
+	<span data-ng-bind="property.row"></span>
+</h3>
+        <h3>
+	<strong>Options</strong>
+	<span data-ng-bind="property.option"></span>
+</h3>
+        <h3>
+	<strong>Ref Description</strong>
+	<span data-ng-bind="property.refDescription"></span>
+</h3>
+        <h3>
+	<strong>Referenced Property Name</strong>
+	<span data-ng-bind="property.referencedPropertyName"></span>
+</h3>
+        <h3>
+	<strong>Selector Control Attribute</strong>
+	<span data-ng-bind="property.selectorControlAttribute"></span>
+</h3>
+        <h3>
+	<strong>Type</strong>
+	<span data-ng-bind="property.type"></span>
+</h3>
+        <h3>
+	<strong>Name</strong>
+	<span data-ng-bind="property.name"></span>
+</h3>
+        <h3>
+	<strong>Value</strong>
+	<span data-ng-bind="property.value"></span>
+</h3>
+        <h3>
+	<strong>Referenced Item Id</strong>
+	<span data-ng-bind="property.referencedFeatureId"></span>
+</h3>
+        <h3>
+	<strong>Referenced Item Name</strong>
+	<span data-ng-bind="property.referencedFeatureName"></span>
+</h3>
+        <h3>
+	<strong>Property Names For Display</strong>
+	<span data-ng-bind="property.propertyNamesForDisplay"></span>
+</h3>
+        <h3>
+	<strong>Reference Description</strong>
+	<span data-ng-bind="property.referenceDescription"></span>
+</h3>
+        
+        
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == property.user._id))">
+		<a class="btn btn-primary" href="/#!{{parentRouteUrl}}/property/{{property._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Created
+			<span data-ng-bind="property.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="property.user.displayName"></span>
+		</em>
+	</small>
+</section>

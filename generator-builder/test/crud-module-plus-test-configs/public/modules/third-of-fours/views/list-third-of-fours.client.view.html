@@ -1,0 +1,35 @@
+<section data-ng-controller="ThirdOfFoursController" data-ng-init="find()">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="pull-left btn btn-primary" href="/#!{{parentRouteUrl? parentRouteUrl : '/'}}">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="pull-right btn btn-primary" href="/#!{{parentRouteUrl}}/third-of-fours/create">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+        <h1>Third of fours</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="thirdOfFour in thirdOfFours" data-ng-href="#!{{parentRouteUrl}}/third-of-fours/{{thirdOfFour._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Created
+				<span data-ng-bind="thirdOfFour.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="thirdOfFour.user.displayName"></span>
+			</small>
+            <h4 class="list-group-item-heading">
+	<strong>Name</strong>
+	<span data-ng-bind="thirdOfFour.name"></span>
+</h4>
+            
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!thirdOfFours.$resolved || thirdOfFours.length">
+    	No Third of fours yet, why don't you <a href="/#!{{parentRouteUrl}}/third-of-fours/create">create one</a>?
+    </div> 
+</section>
