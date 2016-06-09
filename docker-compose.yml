@@ -1,0 +1,9 @@
+web:
+   image: dreamerkumar/bizsitegenie:latest
+   links:
+    - mymongodb:db_1
+   ports:
+    - "3000:3000"
+   command: bash -c "mkdir -p /root/.config/configstore && chmod g+rwx /root /root/.config /root/.config/configstore && cd Development/bizsitegenie/website && NODE_ENV=production forever server.js"
+mymongodb:
+    image: mongo
