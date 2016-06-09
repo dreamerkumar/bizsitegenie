@@ -18,6 +18,10 @@ The MongoDB database instance will be shared between the Builder Interface, Buil
 ##Builder controls the main website files##
 Builder should be able to generate the files in the main website folder
 
+##Installation##
 
+###Running the application using docker compose###
+If you have docker compose installed and running, then you can just use the command "docker-compose up" from the root directly. Your application will be up and running right away. 
 
+Behind the scenes, it will run two containers. One for MongoDB database. And the second one will be the actual web server connected to the first container. 
 
