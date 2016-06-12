@@ -4,3 +4,4 @@
 /generator-builder/node_modules/*
 !generator-builder/node_modules/builder-models
 !generator-builder/node_modules/builder-get-db-entries
+*.log

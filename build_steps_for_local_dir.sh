@@ -1,6 +1,5 @@
 #!/bin/bash
-# redirect stdout/stderr to a file
-# exec &> logfile.txt
+# redirect stdout/stderr to a file and console
 exec > >(tee -i build_steps_for_local_dir_results.log)
 exec 2>&1
 echo "START ---> build_steps_for_local_dir"
