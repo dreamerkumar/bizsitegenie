@@ -1,5 +1,7 @@
 /website/bower_components
 /website/node_modules/*
+/website/public/dist/application.js
+/website/public/dist/application.min.js
 !website/node_modules/builder-models
 /generator-builder/node_modules/*
 !generator-builder/node_modules/builder-models
