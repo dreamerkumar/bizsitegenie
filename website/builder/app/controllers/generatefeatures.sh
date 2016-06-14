@@ -1,6 +1,6 @@
 #!/bin/bash
 # redirect stdout/stderr to a file and console
-exec > >(tee -i code_generator_results.log)
+exec > >(tee -i generatefeatures_results.log)
 exec 2>&1
 echo 'running command yo builder:crud-from-db with parameter '
 echo $1
