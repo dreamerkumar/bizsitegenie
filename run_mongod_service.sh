@@ -6,5 +6,5 @@ echo "START ---> run_mongod_service"
 echo "COMMAND ---> mkdir -p mongodb"
 mkdir -p mongodb
 echo "COMMAND ---> mongod --dbpath mongodb"
-mongod --dbpath mongodb
+mongod --fork --logpath mongodb.log --dbpath mongodb 
 echo "END ---> run_mongod_service"
