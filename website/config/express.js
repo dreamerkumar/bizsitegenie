@@ -28,7 +28,7 @@ module.exports = function(db) {
 	var app = express();
 
 	// Globbing model files for the builder
-	config.getGlobbedFiles('./node_modules/builder-models/**/*.js').forEach(function(modelPath) {
+	config.getGlobbedFiles('./node_modules/bizsitegenie-models/**/*.js').forEach(function(modelPath) {
 		require(path.resolve(modelPath));
 	});
 

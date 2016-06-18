@@ -1,14 +1,13 @@
 {
   "name": "generator-builder",
-  "version": "0.1.12",
-  "description": "A fork of MEAN.JS Yeoman Generator With Added Functionality",
+  "version": "1.0.0",
+  "description": "Yeoman generator for bizsitegenie",
   "main": "app/index.js",
-  "repository": "",
-  "author": {
-    "name": "Vishal Kumar",
-    "email": "vishal@bizsitegenie.com",
-    "url": ""
-  },
+  "author": "Vishal Kumar",
+  "license": "MIT",
+  "homepage" : "http://www.bizsitegenie.com",
+  "repository" : {"type": "git", "url": "git://github.com/dreamerkumar/bizsitegenie.git"},
+  "keywords" : ["bizsitegenie", "MEAN", "MEAN Stack", "Rapid Application Development", "Web Application Builder"],
   "engines": {
     "node": ">=0.10.0"
   },
@@ -29,6 +28,8 @@
     "angular"
   ],
   "dependencies": {
+    "bizsitegenie-models": "^1.0.0",
+    "bizsitegenie-get-db-entries": "^1.0.3",
     "chalk": "~0.5.1",
     "ejs": "^2.3.1",
     "mkdirp": "^0.5.1",

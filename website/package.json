@@ -1,8 +1,12 @@
 {
-  "name": "webapplication",
+  "name": "bizsitegenie",
   "description": "Generate full fledged web application with multi user logins and ability to store data in hierarchical format",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Vishal Kumar",
+  "license": "MIT",
+  "homepage" : "http://www.bizsitegenie.com",
+  "repository" : {"type": "git", "url": "git://github.com/dreamerkumar/bizsitegenie.git"},
+  "keywords" : ["bizsitegenie", "MEAN", "MEAN Stack", "Rapid Application Development", "Web Application Builder"],
   "engines": {
     "node": "0.10.x",
     "npm": "1.4.x"
@@ -13,6 +17,7 @@
     "postinstall": "bower install --config.interactive=false"
   },
   "dependencies": {
+    "bizsitegenie-models": "^1.0.0",
     "amazon-s3-url-signer": "0.0.7",
     "async": "~0.9.0",
     "aws-sdk": "^2.2.33",

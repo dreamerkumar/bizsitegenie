@@ -1,6 +1,6 @@
 'use strict';
 var crudModulePlusCaller = require('../crud-from-json-file/crudModulePlusCaller'),
-	dbGetter = require('builder-get-db-entries'),
+	dbGetter = require('bizsitegenie-get-db-entries'),
 	Q = require('q'),
 	_str = require('underscore.string'),
 	propertyTypes = [

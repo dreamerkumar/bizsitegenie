@@ -2,7 +2,7 @@
 var util = require('util'),
 	inflections = require('underscore.inflections'),
 	yeoman = require('yeoman-generator'),
-	dbGetter = require('builder-get-db-entries'),
+	dbGetter = require('bizsitegenie-get-db-entries'),
 	_slugifiedNames = [],
 	_reservedModuleNames = ['option'];
 
