@@ -15,8 +15,6 @@ echo "COMMAND ---> cd ../"
 cd ../
 echo "COMMAND ---> npm install"
 npm install
-echo "COMMAND ---> bower install --allow-root"
-bower install
 echo "COMMAND ---> grunt build"
 grunt build
 echo "COMMAND ---> cd public"
