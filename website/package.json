@@ -17,6 +17,7 @@
     "postinstall": "bower install --config.interactive=false"
   },
   "dependencies": {
+    "grunt": "^0.4.5",
     "bizsitegenie-models": "^1.0.0",
     "amazon-s3-url-signer": "0.0.7",
     "async": "~0.9.0",
