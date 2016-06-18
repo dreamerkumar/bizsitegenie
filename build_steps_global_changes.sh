@@ -5,8 +5,6 @@ exec 2>&1
 echo "START ---> build_steps_global_changes"
 echo "COMMAND ---> npm install -g forever"
 npm install -g forever
-echo "COMMAND ---> nnpm install -g npm"
-npm install -g npm
 echo "COMMAND ---> npm -g install yo"
 npm -g install yo
 echo "---> Fix issue with yo command"
