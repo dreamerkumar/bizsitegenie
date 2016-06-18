@@ -4,8 +4,6 @@
 /website/public/dist/application.js
 /website/public/dist/application.min.js
 /generator-builder/node_modules/*
-!generator-builder/node_modules/builder-models
-!generator-builder/node_modules/builder-get-db-entries
 *.log
 mongodb.log.*
 
