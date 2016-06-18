@@ -5,6 +5,14 @@ exec 2>&1
 echo "START ---> build_steps_for_local_dir"
 echo "COMMAND ---> cd website"
 cd website
+echo "COMMAND ---> cd public"
+cd public
+echo "COMMAND ---> mkdir -p dist"
+mkdir -p dist
+echo "COMMAND ---> chmod 777 dist"
+chmod 777 dist
+echo "COMMAND ---> cd ../"
+cd ../
 echo "COMMAND ---> npm install"
 npm install
 echo "COMMAND ---> bower install"
