@@ -28,6 +28,7 @@
     "angular"
   ],
   "dependencies": {
+    "mongoose": "~3.8.8",
     "bizsitegenie-models": "^1.0.0",
     "bizsitegenie-get-db-entries": "^1.0.4",
     "chalk": "~0.5.1",
