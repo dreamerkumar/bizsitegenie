@@ -7,6 +7,8 @@ echo "COMMAND ---> npm install -g forever"
 npm install -g forever
 echo "COMMAND ---> npm install -g grunt-cli"
 npm install -g grunt-cli
+echo "COMMAND ---> npm install -g bower"
+npm install -g bower
 echo "COMMAND ---> npm -g install yo"
 npm -g install yo
 echo "---> Fix issue with yo command"
