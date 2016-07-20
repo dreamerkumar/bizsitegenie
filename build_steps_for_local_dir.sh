@@ -33,4 +33,7 @@ echo "COMMAND ---> ../../generator-builder"
 cd ../../generator-builder
 echo "COMMAND ---> npm install"
 npm install
+echo "---> link the builder yo generator so that it is available locally"
+echo "COMMAND ---> npm link"
+npm link
 echo "END ---> build_steps_for_local_dir"

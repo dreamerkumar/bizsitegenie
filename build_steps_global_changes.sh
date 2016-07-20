@@ -16,9 +16,4 @@ echo "COMMAND ---> mkdir -p /root/.config/configstore"
 mkdir -p /root/.config/configstore
 echo "COMMAND ---> chmod g+rwx /root /root/.config /root/.config/configstore"
 chmod g+rwx /root /root/.config /root/.config/configstore
-echo "---> link the builder yo generator so that it is available locally"
-echo "COMMAND ---> cd generator-builder"
-cd generator-builder
-echo "COMMAND ---> npm link"
-npm link
 echo "END ---> build_steps_global_changes"
