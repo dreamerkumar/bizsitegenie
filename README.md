@@ -1,6 +1,8 @@
 #Bizsitegenie Web Application Framework#
 An Open Source Full Stack Framework in Javascript prebuilt with the most common features that every web application needs. 
 
+Comes with a intuitive UI and code generators to faciliate rapid application development.
+
 ##MEAN Framework for Rapid Application Development##
 Bizsitegenie can come in handy for Rapid Application Development. You can get a lot done before you even write your first line of code. 
 
